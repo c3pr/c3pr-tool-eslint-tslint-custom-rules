@@ -1,0 +1,11 @@
+tool_id: "eslint:custom-no-console"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+
+command: eslint #{filename} --fix --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rulesdir "/c3pr/rules" --rule "{no-console-custom: error}
+
+
+pr_title: "Don't use console.log()"
+pr_body: |
+  Don't leave debugging code on production files, remove all unnecessary `console.log()` calls.
+

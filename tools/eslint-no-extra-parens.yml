@@ -1,0 +1,13 @@
+tool_id: "eslint:no-extra-parens"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+
+# TODO realmente funciona em arquivos .ts tambem??
+# TODO ver o que fazer com essas configuracoes da versao ECMAScript
+command: eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{no-extra-parens: error}"
+
+pr_title: "Only use parentheses where they are necessary"
+pr_body: |
+  This rule restricts the use of parentheses to only where they are necessary.
+
+  See: https://eslint.org/docs/rules/no-extra-parens

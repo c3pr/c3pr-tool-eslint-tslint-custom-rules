@@ -1,0 +1,12 @@
+tool_id: "typescript-eslint:no-extra-parens"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+
+# TODO qual a diferenca entre esta e a do eslint puro?!
+command: eslint --fix #{filename} --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/no-extra-parens: error}"
+
+pr_title: "Only use parentheses where they are necessary"
+pr_body: |
+  This rule restricts the use of parentheses to only where they are necessary.
+
+  See: https://eslint.org/docs/rules/no-extra-parens
