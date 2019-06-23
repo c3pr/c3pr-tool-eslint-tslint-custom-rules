@@ -1,10 +1,8 @@
 tool_id: "eslint:no-extra-parens"
-extensions: ["js", "ts"]
-tags: ["JavaScript", "TypeScript"]
+extensions: ["js"]
+tags: ["JavaScript"]
 
-# TODO realmente funciona em arquivos .ts tambem??
-# TODO ver o que fazer com essas configuracoes da versao ECMAScript
-command: eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{no-extra-parens: error}"
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{no-extra-parens: \"error\"}"'
 
 pr_title: "Only use parentheses where they are necessary"
 pr_body: |
