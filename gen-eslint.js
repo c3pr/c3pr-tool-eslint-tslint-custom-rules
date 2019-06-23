@@ -103,6 +103,7 @@ for ([rule, desc] of Object.entries(eslint)) {
     const template = `tool_id: "eslint:${rule}"
 extensions: ["js"]
 tags: ["JavaScript"]
+default_weight: 100
 
 command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{${rule}: \\"error\\"}"'
 
