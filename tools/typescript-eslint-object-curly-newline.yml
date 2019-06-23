@@ -1,0 +1,10 @@
+tool_id: "typescript-eslint:object-curly-newline"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 300 # prefer eslint and tslint over this
+
+command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/object-curly-newline: \"error\"}"'
+
+pr_title: Consistent line breaks inside braces
+pr_body: |
+  See: https://eslint.org/docs/rules/object-curly-newline

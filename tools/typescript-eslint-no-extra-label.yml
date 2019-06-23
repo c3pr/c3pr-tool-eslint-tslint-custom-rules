@@ -1,0 +1,10 @@
+tool_id: "typescript-eslint:no-extra-label"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 300 # prefer eslint and tslint over this
+
+command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/no-extra-label: \"error\"}"'
+
+pr_title: Unnecessary labels
+pr_body: |
+  See: https://eslint.org/docs/rules/no-extra-label

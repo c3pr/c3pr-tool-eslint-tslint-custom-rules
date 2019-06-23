@@ -1,0 +1,10 @@
+tool_id: "typescript-eslint:quote-props"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 300 # prefer eslint and tslint over this
+
+command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/quote-props: \"error\"}"'
+
+pr_title: Quotes around object literal property names
+pr_body: |
+  See: https://eslint.org/docs/rules/quote-props

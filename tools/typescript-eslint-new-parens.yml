@@ -1,0 +1,10 @@
+tool_id: "typescript-eslint:new-parens"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 300 # prefer eslint and tslint over this
+
+command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/new-parens: \"error\"}"'
+
+pr_title: Parentheses when invoking a constructor with no arguments
+pr_body: |
+  See: https://eslint.org/docs/rules/new-parens

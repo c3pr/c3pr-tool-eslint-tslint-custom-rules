@@ -1,0 +1,10 @@
+tool_id: "typescript-eslint:wrap-regex"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 300 # prefer eslint and tslint over this
+
+command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/wrap-regex: \"error\"}"'
+
+pr_title: Parenthesis around regex literals
+pr_body: |
+  See: https://eslint.org/docs/rules/wrap-regex

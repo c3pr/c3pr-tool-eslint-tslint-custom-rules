@@ -1,0 +1,10 @@
+tool_id: "typescript-eslint:prefer-object-spread"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 300 # prefer eslint and tslint over this
+
+command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/prefer-object-spread: \"error\"}"'
+
+pr_title: Using Object.assign with an object literal as the first argument and prefer the use of object spread instead
+pr_body: |
+  See: https://eslint.org/docs/rules/prefer-object-spread

@@ -1,0 +1,10 @@
+tool_id: "typescript-eslint:generator-star-spacing"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 300 # prefer eslint and tslint over this
+
+command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/generator-star-spacing: \"error\"}"'
+
+pr_title: Consistent spacing around * operators in generator functions
+pr_body: |
+  See: https://eslint.org/docs/rules/generator-star-spacing

@@ -1,0 +1,10 @@
+tool_id: "typescript-eslint:one-var"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 300 # prefer eslint and tslint over this
+
+command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/one-var: \"error\"}"'
+
+pr_title: Variables to be declared either together or separately in functions
+pr_body: |
+  See: https://eslint.org/docs/rules/one-var

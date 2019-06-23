@@ -1,0 +1,10 @@
+tool_id: "typescript-eslint:object-property-newline"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 300 # prefer eslint and tslint over this
+
+command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/object-property-newline: \"error\"}"'
+
+pr_title: Placing object properties on separate lines
+pr_body: |
+  See: https://eslint.org/docs/rules/object-property-newline

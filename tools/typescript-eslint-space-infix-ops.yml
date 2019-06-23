@@ -1,0 +1,10 @@
+tool_id: "typescript-eslint:space-infix-ops"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 300 # prefer eslint and tslint over this
+
+command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/space-infix-ops: \"error\"}"'
+
+pr_title: Spacing around infix operators
+pr_body: |
+  See: https://eslint.org/docs/rules/space-infix-ops

@@ -1,0 +1,10 @@
+tool_id: "typescript-eslint:quotes"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 300 # prefer eslint and tslint over this
+
+command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/quotes: \"error\"}"'
+
+pr_title: The consistent use of either backticks, double, or single quotes
+pr_body: |
+  See: https://eslint.org/docs/rules/quotes

@@ -1,0 +1,10 @@
+tool_id: "typescript-eslint:jsx-quotes"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 300 # prefer eslint and tslint over this
+
+command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/jsx-quotes: \"error\"}"'
+
+pr_title: Consistent use of either double or single quotes in JSX attributes
+pr_body: |
+  See: https://eslint.org/docs/rules/jsx-quotes

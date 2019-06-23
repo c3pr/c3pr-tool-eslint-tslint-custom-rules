@@ -1,0 +1,10 @@
+tool_id: "typescript-eslint:curly"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 300 # prefer eslint and tslint over this
+
+command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/curly: \"error\"}"'
+
+pr_title: Consistent brace style for all control statements
+pr_body: |
+  See: https://eslint.org/docs/rules/curly

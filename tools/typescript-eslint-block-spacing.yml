@@ -1,0 +1,10 @@
+tool_id: "typescript-eslint:block-spacing"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 300 # prefer eslint and tslint over this
+
+command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/block-spacing: \"error\"}"'
+
+pr_title: disallow or enforce spaces inside of blocks after opening block and before closing block
+pr_body: |
+  See: https://eslint.org/docs/rules/block-spacing

@@ -1,0 +1,10 @@
+tool_id: "typescript-eslint:dot-notation"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 300 # prefer eslint and tslint over this
+
+command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/dot-notation: \"error\"}"'
+
+pr_title: Use dot notation whenever possible
+pr_body: |
+  See: https://eslint.org/docs/rules/dot-notation

@@ -1,0 +1,10 @@
+tool_id: "typescript-eslint:operator-linebreak"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 300 # prefer eslint and tslint over this
+
+command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/operator-linebreak: \"error\"}"'
+
+pr_title: Consistent linebreak style for operators
+pr_body: |
+  See: https://eslint.org/docs/rules/operator-linebreak

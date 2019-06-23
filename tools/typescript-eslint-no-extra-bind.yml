@@ -1,0 +1,10 @@
+tool_id: "typescript-eslint:no-extra-bind"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 300 # prefer eslint and tslint over this
+
+command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/no-extra-bind: \"error\"}"'
+
+pr_title: Unnecessary calls to .bind()
+pr_body: |
+  See: https://eslint.org/docs/rules/no-extra-bind

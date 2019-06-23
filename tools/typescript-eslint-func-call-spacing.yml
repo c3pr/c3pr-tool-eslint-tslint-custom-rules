@@ -1,0 +1,10 @@
+tool_id: "typescript-eslint:func-call-spacing"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 300 # prefer eslint and tslint over this
+
+command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/func-call-spacing: \"error\"}"'
+
+pr_title: require or disallow spacing between function identifiers and their invocations
+pr_body: |
+  See: https://eslint.org/docs/rules/func-call-spacing
