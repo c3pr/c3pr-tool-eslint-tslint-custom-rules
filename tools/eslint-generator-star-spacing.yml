@@ -3,8 +3,8 @@ extensions: ["js"]
 tags: ["JavaScript"]
 default_weight: 100
 
-command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{generator-star-spacing: \"error\"}"'
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{generator-star-spacing: \"error\"}"'
 
-pr_title: enforce consistent spacing around * operators in generator functions
+pr_title: Consistent spacing around * operators in generator functions
 pr_body: |
   See: https://eslint.org/docs/rules/generator-star-spacing

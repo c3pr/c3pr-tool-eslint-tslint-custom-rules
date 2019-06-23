@@ -1,10 +1,10 @@
 tool_id: "eslint:sort-vars"
 extensions: ["js"]
 tags: ["JavaScript"]
-default_weight: 101
+default_weight: 100
 
-command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{sort-vars: \"error\"}"'
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{sort-vars: \"error\"}"'
 
-pr_title: require variables within the same declaration block to be sorted
+pr_title: Variables within the same declaration block to be sorted
 pr_body: |
   See: https://eslint.org/docs/rules/sort-vars

@@ -3,8 +3,8 @@ extensions: ["js"]
 tags: ["JavaScript"]
 default_weight: 100
 
-command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{no-confusing-arrow: \"error\"}"'
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{no-confusing-arrow: \"error\"}"'
 
-pr_title: disallow arrow functions where they could be confused with comparisons
+pr_title: Arrow functions where they could be confused with comparisons
 pr_body: |
   See: https://eslint.org/docs/rules/no-confusing-arrow

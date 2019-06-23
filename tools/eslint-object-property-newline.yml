@@ -3,8 +3,8 @@ extensions: ["js"]
 tags: ["JavaScript"]
 default_weight: 100
 
-command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{object-property-newline: \"error\"}"'
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{object-property-newline: \"error\"}"'
 
-pr_title: enforce placing object properties on separate lines
+pr_title: Placing object properties on separate lines
 pr_body: |
   See: https://eslint.org/docs/rules/object-property-newline

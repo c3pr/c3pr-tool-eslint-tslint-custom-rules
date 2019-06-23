@@ -3,7 +3,7 @@ extensions: ["js"]
 tags: ["JavaScript"]
 default_weight: 100
 
-command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{padding-line-between-statements: \"error\"}"'
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{padding-line-between-statements: \"error\"}"'
 
 pr_title: require or disallow padding lines between statements
 pr_body: |

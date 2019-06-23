@@ -3,8 +3,8 @@ extensions: ["js"]
 tags: ["JavaScript"]
 default_weight: 100
 
-command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{new-parens: \"error\"}"'
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{new-parens: \"error\"}"'
 
-pr_title: require parentheses when invoking a constructor with no arguments
+pr_title: Parentheses when invoking a constructor with no arguments
 pr_body: |
   See: https://eslint.org/docs/rules/new-parens

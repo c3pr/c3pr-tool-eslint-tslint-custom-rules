@@ -3,8 +3,8 @@ extensions: ["js"]
 tags: ["JavaScript"]
 default_weight: 100
 
-command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{prefer-destructuring: \"error\"}"'
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{prefer-destructuring: \"error\"}"'
 
-pr_title: require destructuring from arrays and/or objects
+pr_title: Destructuring from arrays and/or objects
 pr_body: |
   See: https://eslint.org/docs/rules/prefer-destructuring

@@ -3,7 +3,7 @@ extensions: ["js"]
 tags: ["JavaScript"]
 default_weight: 100
 
-command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{capitalized-comments: \"error\"}"'
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{capitalized-comments: \"error\"}"'
 
 pr_title: enforce or disallow capitalization of the first letter of a comment
 pr_body: |

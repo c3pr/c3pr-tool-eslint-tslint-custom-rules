@@ -3,8 +3,8 @@ extensions: ["js"]
 tags: ["JavaScript"]
 default_weight: 100
 
-command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{line-comment-position: \"error\"}"'
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{line-comment-position: \"error\"}"'
 
-pr_title: enforce position of line comments
+pr_title: Position of line comments
 pr_body: |
   See: https://eslint.org/docs/rules/line-comment-position

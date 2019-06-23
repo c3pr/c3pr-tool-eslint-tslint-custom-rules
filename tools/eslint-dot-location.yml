@@ -3,8 +3,8 @@ extensions: ["js"]
 tags: ["JavaScript"]
 default_weight: 100
 
-command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{dot-location: \"error\"}"'
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{dot-location: \"error\"}"'
 
-pr_title: enforce consistent newlines before and after dots
+pr_title: Consistent newlines before and after dots
 pr_body: |
   See: https://eslint.org/docs/rules/dot-location

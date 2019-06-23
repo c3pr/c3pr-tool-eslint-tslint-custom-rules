@@ -3,8 +3,8 @@ extensions: ["js"]
 tags: ["JavaScript"]
 default_weight: 100
 
-command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{no-else-return: \"error\"}"'
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{no-else-return: \"error\"}"'
 
-pr_title: disallow else blocks after return statements in if statements
+pr_title: else blocks after return statements in if statements
 pr_body: |
   See: https://eslint.org/docs/rules/no-else-return

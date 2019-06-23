@@ -3,8 +3,8 @@ extensions: ["js"]
 tags: ["JavaScript"]
 default_weight: 100
 
-command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{one-var: \"error\"}"'
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{one-var: \"error\"}"'
 
-pr_title: enforce variables to be declared either together or separately in functions
+pr_title: Variables to be declared either together or separately in functions
 pr_body: |
   See: https://eslint.org/docs/rules/one-var

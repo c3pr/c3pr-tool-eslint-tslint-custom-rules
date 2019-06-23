@@ -3,8 +3,8 @@ extensions: ["js"]
 tags: ["JavaScript"]
 default_weight: 100
 
-command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{semi-spacing: \"error\"}"'
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{semi-spacing: \"error\"}"'
 
-pr_title: enforce consistent spacing before and after semicolons
+pr_title: Consistent spacing before and after semicolons
 pr_body: |
   See: https://eslint.org/docs/rules/semi-spacing

@@ -3,8 +3,8 @@ extensions: ["js"]
 tags: ["JavaScript"]
 default_weight: 100
 
-command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{newline-per-chained-call: \"error\"}"'
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{newline-per-chained-call: \"error\"}"'
 
-pr_title: require a newline after each call in a method chain
+pr_title: A newline after each call in a method chain
 pr_body: |
   See: https://eslint.org/docs/rules/newline-per-chained-call

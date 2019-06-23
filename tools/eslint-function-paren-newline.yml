@@ -3,8 +3,8 @@ extensions: ["js"]
 tags: ["JavaScript"]
 default_weight: 100
 
-command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{function-paren-newline: \"error\"}"'
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{function-paren-newline: \"error\"}"'
 
-pr_title: enforce consistent line breaks inside function parentheses
+pr_title: Consistent line breaks inside function parentheses
 pr_body: |
   See: https://eslint.org/docs/rules/function-paren-newline

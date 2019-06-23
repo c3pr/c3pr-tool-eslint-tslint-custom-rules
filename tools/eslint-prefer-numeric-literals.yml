@@ -3,8 +3,8 @@ extensions: ["js"]
 tags: ["JavaScript"]
 default_weight: 100
 
-command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{prefer-numeric-literals: \"error\"}"'
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{prefer-numeric-literals: \"error\"}"'
 
-pr_title: disallow parseInt() and Number.parseInt() in favor of binary, octal, and hexadecimal literals
+pr_title: parseInt() and Number.parseInt() in favor of binary, octal, and hexadecimal literals
 pr_body: |
   See: https://eslint.org/docs/rules/prefer-numeric-literals

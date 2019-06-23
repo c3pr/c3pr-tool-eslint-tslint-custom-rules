@@ -3,8 +3,8 @@ extensions: ["js"]
 tags: ["JavaScript"]
 default_weight: 100
 
-command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{space-in-parens: \"error\"}"'
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{space-in-parens: \"error\"}"'
 
-pr_title: enforce consistent spacing inside parentheses
+pr_title: Consistent spacing inside parentheses
 pr_body: |
   See: https://eslint.org/docs/rules/space-in-parens

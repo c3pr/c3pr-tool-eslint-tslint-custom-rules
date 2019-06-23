@@ -3,8 +3,8 @@ extensions: ["js"]
 tags: ["JavaScript"]
 default_weight: 100
 
-command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{nonblock-statement-body-position: \"error\"}"'
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{nonblock-statement-body-position: \"error\"}"'
 
-pr_title: enforce the location of single-line statements
+pr_title: Location of single-line statements
 pr_body: |
   See: https://eslint.org/docs/rules/nonblock-statement-body-position

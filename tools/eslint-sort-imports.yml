@@ -1,10 +1,10 @@
 tool_id: "eslint:sort-imports"
 extensions: ["js"]
 tags: ["JavaScript"]
-default_weight: 101
+default_weight: 100
 
-command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{sort-imports: \"error\"}"'
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{sort-imports: \"error\"}"'
 
-pr_title: enforce sorted import declarations within modules
+pr_title: Sorted import declarations within modules
 pr_body: |
   See: https://eslint.org/docs/rules/sort-imports

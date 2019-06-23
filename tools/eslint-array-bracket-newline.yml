@@ -3,8 +3,8 @@ extensions: ["js"]
 tags: ["JavaScript"]
 default_weight: 100
 
-command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{array-bracket-newline: \"error\"}"'
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{array-bracket-newline: \"error\"}"'
 
-pr_title: enforce linebreaks after opening and before closing array brackets
+pr_title: Linebreaks after opening and before closing array brackets
 pr_body: |
   See: https://eslint.org/docs/rules/array-bracket-newline

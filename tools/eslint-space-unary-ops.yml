@@ -3,8 +3,8 @@ extensions: ["js"]
 tags: ["JavaScript"]
 default_weight: 100
 
-command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{space-unary-ops: \"error\"}"'
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{space-unary-ops: \"error\"}"'
 
-pr_title: enforce consistent spacing before or after unary operators
+pr_title: Consistent spacing before or after unary operators
 pr_body: |
   See: https://eslint.org/docs/rules/space-unary-ops

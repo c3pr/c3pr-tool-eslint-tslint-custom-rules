@@ -3,8 +3,8 @@ extensions: ["js"]
 tags: ["JavaScript"]
 default_weight: 100
 
-command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{prefer-object-spread: \"error\"}"'
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{prefer-object-spread: \"error\"}"'
 
-pr_title: disallow using Object.assign with an object literal as the first argument and prefer the use of object spread instead.
+pr_title: Using Object.assign with an object literal as the first argument and prefer the use of object spread instead
 pr_body: |
   See: https://eslint.org/docs/rules/prefer-object-spread

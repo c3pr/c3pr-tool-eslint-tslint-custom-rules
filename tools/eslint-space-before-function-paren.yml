@@ -3,8 +3,8 @@ extensions: ["js"]
 tags: ["JavaScript"]
 default_weight: 100
 
-command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{space-before-function-paren: \"error\"}"'
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{space-before-function-paren: \"error\"}"'
 
-pr_title: enforce consistent spacing before function definition opening parenthesis
+pr_title: Consistent spacing before function definition opening parenthesis
 pr_body: |
   See: https://eslint.org/docs/rules/space-before-function-paren
