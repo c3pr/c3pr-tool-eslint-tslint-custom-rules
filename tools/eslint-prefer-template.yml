@@ -1,0 +1,9 @@
+tool_id: "eslint:prefer-template"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{prefer-template: \"error\"}"'
+
+pr_title: require template literals instead of string concatenation
+pr_body: |
+  See: https://eslint.org/docs/rules/prefer-template

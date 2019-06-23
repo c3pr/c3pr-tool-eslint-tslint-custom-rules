@@ -1,0 +1,9 @@
+tool_id: "eslint:no-extra-semi"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{no-extra-semi: \"error\"}"'
+
+pr_title: disallow unnecessary semicolons
+pr_body: |
+  See: https://eslint.org/docs/rules/no-extra-semi

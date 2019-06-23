@@ -1,0 +1,9 @@
+tool_id: "eslint:arrow-body-style"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{arrow-body-style: \"error\"}"'
+
+pr_title: require braces around arrow function bodies
+pr_body: |
+  See: https://eslint.org/docs/rules/arrow-body-style

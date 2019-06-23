@@ -1,0 +1,9 @@
+tool_id: "eslint:quotes"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{quotes: \"error\"}"'
+
+pr_title: enforce the consistent use of either backticks, double, or single quotes
+pr_body: |
+  See: https://eslint.org/docs/rules/quotes

@@ -1,0 +1,9 @@
+tool_id: "eslint:rest-spread-spacing"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{rest-spread-spacing: \"error\"}"'
+
+pr_title: enforce spacing between rest and spread operators and their expressions
+pr_body: |
+  See: https://eslint.org/docs/rules/rest-spread-spacing

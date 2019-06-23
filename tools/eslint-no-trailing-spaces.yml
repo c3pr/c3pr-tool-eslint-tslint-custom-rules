@@ -1,0 +1,9 @@
+tool_id: "eslint:no-trailing-spaces"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{no-trailing-spaces: \"error\"}"'
+
+pr_title: disallow trailing whitespace at the end of lines
+pr_body: |
+  See: https://eslint.org/docs/rules/no-trailing-spaces

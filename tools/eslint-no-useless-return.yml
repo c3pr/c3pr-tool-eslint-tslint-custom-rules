@@ -1,0 +1,9 @@
+tool_id: "eslint:no-useless-return"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{no-useless-return: \"error\"}"'
+
+pr_title: disallow redundant return statements
+pr_body: |
+  See: https://eslint.org/docs/rules/no-useless-return

@@ -1,0 +1,9 @@
+tool_id: "eslint:space-infix-ops"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{space-infix-ops: \"error\"}"'
+
+pr_title: require spacing around infix operators
+pr_body: |
+  See: https://eslint.org/docs/rules/space-infix-ops

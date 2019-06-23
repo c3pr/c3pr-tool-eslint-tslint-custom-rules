@@ -1,0 +1,9 @@
+tool_id: "eslint:jsx-quotes"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{jsx-quotes: \"error\"}"'
+
+pr_title: enforce the consistent use of either double or single quotes in JSX attributes
+pr_body: |
+  See: https://eslint.org/docs/rules/jsx-quotes

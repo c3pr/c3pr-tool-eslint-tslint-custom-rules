@@ -1,0 +1,9 @@
+tool_id: "eslint:computed-property-spacing"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{computed-property-spacing: \"error\"}"'
+
+pr_title: enforce consistent spacing inside computed property brackets
+pr_body: |
+  See: https://eslint.org/docs/rules/computed-property-spacing

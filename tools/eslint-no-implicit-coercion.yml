@@ -1,0 +1,9 @@
+tool_id: "eslint:no-implicit-coercion"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{no-implicit-coercion: \"error\"}"'
+
+pr_title: disallow shorthand type conversions
+pr_body: |
+  See: https://eslint.org/docs/rules/no-implicit-coercion

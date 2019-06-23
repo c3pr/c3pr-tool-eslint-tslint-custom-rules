@@ -4,7 +4,7 @@ tags: ["JavaScript"]
 
 command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{no-extra-parens: \"error\"}"'
 
-pr_title: "Only use parentheses where they are necessary"
+pr_title: Only use parentheses where they are necessary
 pr_body: |
   This rule restricts the use of parentheses to only where they are necessary.
 

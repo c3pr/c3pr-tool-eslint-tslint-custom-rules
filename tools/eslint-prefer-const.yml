@@ -1,0 +1,9 @@
+tool_id: "eslint:prefer-const"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{prefer-const: \"error\"}"'
+
+pr_title: require const declarations for variables that are never reassigned after declared
+pr_body: |
+  See: https://eslint.org/docs/rules/prefer-const

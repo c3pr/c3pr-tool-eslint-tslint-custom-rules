@@ -1,0 +1,9 @@
+tool_id: "eslint:lines-between-class-members"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{lines-between-class-members: \"error\"}"'
+
+pr_title: require or disallow an empty line between class members
+pr_body: |
+  See: https://eslint.org/docs/rules/lines-between-class-members

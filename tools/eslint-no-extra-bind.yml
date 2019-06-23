@@ -1,0 +1,9 @@
+tool_id: "eslint:no-extra-bind"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{no-extra-bind: \"error\"}"'
+
+pr_title: disallow unnecessary calls to .bind()
+pr_body: |
+  See: https://eslint.org/docs/rules/no-extra-bind

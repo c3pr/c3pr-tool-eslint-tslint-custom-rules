@@ -1,0 +1,9 @@
+tool_id: "eslint:arrow-parens"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{arrow-parens: \"error\"}"'
+
+pr_title: require parentheses around arrow function arguments
+pr_body: |
+  See: https://eslint.org/docs/rules/arrow-parens

@@ -1,0 +1,9 @@
+tool_id: "eslint:operator-linebreak"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{operator-linebreak: \"error\"}"'
+
+pr_title: enforce consistent linebreak style for operators
+pr_body: |
+  See: https://eslint.org/docs/rules/operator-linebreak

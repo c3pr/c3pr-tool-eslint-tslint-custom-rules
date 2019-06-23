@@ -1,0 +1,9 @@
+tool_id: "eslint:unicode-bom"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{unicode-bom: \"error\"}"'
+
+pr_title: require or disallow Unicode byte order mark (BOM)
+pr_body: |
+  See: https://eslint.org/docs/rules/unicode-bom

@@ -1,0 +1,9 @@
+tool_id: "eslint:object-shorthand"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{object-shorthand: \"error\"}"'
+
+pr_title: require or disallow method and property shorthand syntax for object literals
+pr_body: |
+  See: https://eslint.org/docs/rules/object-shorthand

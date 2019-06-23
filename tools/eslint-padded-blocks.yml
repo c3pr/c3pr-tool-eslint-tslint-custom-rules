@@ -1,0 +1,9 @@
+tool_id: "eslint:padded-blocks"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{padded-blocks: \"error\"}"'
+
+pr_title: require or disallow padding within blocks
+pr_body: |
+  See: https://eslint.org/docs/rules/padded-blocks

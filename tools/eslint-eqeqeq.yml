@@ -1,0 +1,9 @@
+tool_id: "eslint:eqeqeq"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{eqeqeq: \"error\"}"'
+
+pr_title: require the use of === and !==
+pr_body: |
+  See: https://eslint.org/docs/rules/eqeqeq

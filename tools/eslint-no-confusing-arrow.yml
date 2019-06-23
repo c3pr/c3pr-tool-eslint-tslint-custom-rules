@@ -1,0 +1,9 @@
+tool_id: "eslint:no-confusing-arrow"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{no-confusing-arrow: \"error\"}"'
+
+pr_title: disallow arrow functions where they could be confused with comparisons
+pr_body: |
+  See: https://eslint.org/docs/rules/no-confusing-arrow

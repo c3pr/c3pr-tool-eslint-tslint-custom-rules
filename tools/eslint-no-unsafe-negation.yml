@@ -1,0 +1,9 @@
+tool_id: "eslint:no-unsafe-negation"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{no-unsafe-negation: \"error\"}"'
+
+pr_title: disallow negating the left operand of relational operators
+pr_body: |
+  See: https://eslint.org/docs/rules/no-unsafe-negation

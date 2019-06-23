@@ -1,0 +1,9 @@
+tool_id: "eslint:spaced-comment"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{spaced-comment: \"error\"}"'
+
+pr_title: enforce consistent spacing after the // or /* in a comment
+pr_body: |
+  See: https://eslint.org/docs/rules/spaced-comment

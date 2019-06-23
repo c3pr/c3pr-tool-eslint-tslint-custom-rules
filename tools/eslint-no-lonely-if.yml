@@ -1,0 +1,9 @@
+tool_id: "eslint:no-lonely-if"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{no-lonely-if: \"error\"}"'
+
+pr_title: disallow if statements as the only statement in else blocks
+pr_body: |
+  See: https://eslint.org/docs/rules/no-lonely-if

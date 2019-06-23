@@ -1,0 +1,9 @@
+tool_id: "eslint:wrap-regex"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{wrap-regex: \"error\"}"'
+
+pr_title: require parenthesis around regex literals
+pr_body: |
+  See: https://eslint.org/docs/rules/wrap-regex

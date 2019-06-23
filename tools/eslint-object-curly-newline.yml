@@ -1,0 +1,9 @@
+tool_id: "eslint:object-curly-newline"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{object-curly-newline: \"error\"}"'
+
+pr_title: enforce consistent line breaks inside braces
+pr_body: |
+  See: https://eslint.org/docs/rules/object-curly-newline

@@ -1,0 +1,9 @@
+tool_id: "eslint:curly"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{curly: \"error\"}"'
+
+pr_title: enforce consistent brace style for all control statements
+pr_body: |
+  See: https://eslint.org/docs/rules/curly

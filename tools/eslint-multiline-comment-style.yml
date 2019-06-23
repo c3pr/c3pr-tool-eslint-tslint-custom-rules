@@ -1,0 +1,9 @@
+tool_id: "eslint:multiline-comment-style"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{multiline-comment-style: \"error\"}"'
+
+pr_title: enforce a particular style for multiline comments
+pr_body: |
+  See: https://eslint.org/docs/rules/multiline-comment-style

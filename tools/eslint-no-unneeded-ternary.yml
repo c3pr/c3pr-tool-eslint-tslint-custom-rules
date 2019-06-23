@@ -1,0 +1,9 @@
+tool_id: "eslint:no-unneeded-ternary"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{no-unneeded-ternary: \"error\"}"'
+
+pr_title: disallow ternary operators when simpler alternatives exist
+pr_body: |
+  See: https://eslint.org/docs/rules/no-unneeded-ternary

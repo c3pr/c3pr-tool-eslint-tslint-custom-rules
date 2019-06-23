@@ -1,0 +1,9 @@
+tool_id: "eslint:capitalized-comments"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{capitalized-comments: \"error\"}"'
+
+pr_title: enforce or disallow capitalization of the first letter of a comment
+pr_body: |
+  See: https://eslint.org/docs/rules/capitalized-comments

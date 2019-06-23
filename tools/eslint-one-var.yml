@@ -1,0 +1,9 @@
+tool_id: "eslint:one-var"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{one-var: \"error\"}"'
+
+pr_title: enforce variables to be declared either together or separately in functions
+pr_body: |
+  See: https://eslint.org/docs/rules/one-var

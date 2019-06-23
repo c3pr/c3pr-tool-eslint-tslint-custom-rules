@@ -1,0 +1,9 @@
+tool_id: "eslint:object-property-newline"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{object-property-newline: \"error\"}"'
+
+pr_title: enforce placing object properties on separate lines
+pr_body: |
+  See: https://eslint.org/docs/rules/object-property-newline

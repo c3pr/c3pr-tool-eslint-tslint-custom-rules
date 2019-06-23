@@ -1,0 +1,9 @@
+tool_id: "eslint:indent"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{indent: \"error\"}"'
+
+pr_title: enforce consistent indentation
+pr_body: |
+  See: https://eslint.org/docs/rules/indent

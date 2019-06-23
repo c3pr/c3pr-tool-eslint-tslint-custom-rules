@@ -1,0 +1,9 @@
+tool_id: "eslint:lines-around-comment"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{lines-around-comment: \"error\"}"'
+
+pr_title: require empty lines around comments
+pr_body: |
+  See: https://eslint.org/docs/rules/lines-around-comment

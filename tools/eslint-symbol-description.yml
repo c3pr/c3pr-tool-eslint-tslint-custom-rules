@@ -1,0 +1,9 @@
+tool_id: "eslint:symbol-description"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{symbol-description: \"error\"}"'
+
+pr_title: require symbol descriptions
+pr_body: |
+  See: https://eslint.org/docs/rules/symbol-description

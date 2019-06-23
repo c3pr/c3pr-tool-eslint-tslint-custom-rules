@@ -1,0 +1,9 @@
+tool_id: "eslint:semi-style"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{semi-style: \"error\"}"'
+
+pr_title: enforce location of semicolons
+pr_body: |
+  See: https://eslint.org/docs/rules/semi-style

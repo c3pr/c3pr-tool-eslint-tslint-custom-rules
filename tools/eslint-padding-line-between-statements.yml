@@ -1,0 +1,9 @@
+tool_id: "eslint:padding-line-between-statements"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{padding-line-between-statements: \"error\"}"'
+
+pr_title: require or disallow padding lines between statements
+pr_body: |
+  See: https://eslint.org/docs/rules/padding-line-between-statements

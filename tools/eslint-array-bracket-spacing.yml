@@ -1,0 +1,9 @@
+tool_id: "eslint:array-bracket-spacing"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{array-bracket-spacing: \"error\"}"'
+
+pr_title: enforce consistent spacing inside array brackets
+pr_body: |
+  See: https://eslint.org/docs/rules/array-bracket-spacing

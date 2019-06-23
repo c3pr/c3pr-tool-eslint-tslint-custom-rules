@@ -1,0 +1,9 @@
+tool_id: "eslint:key-spacing"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{key-spacing: \"error\"}"'
+
+pr_title: enforce consistent spacing between keys and values in object literal properties
+pr_body: |
+  See: https://eslint.org/docs/rules/key-spacing

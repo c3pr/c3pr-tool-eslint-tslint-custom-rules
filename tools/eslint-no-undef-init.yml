@@ -1,0 +1,9 @@
+tool_id: "eslint:no-undef-init"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{no-undef-init: \"error\"}"'
+
+pr_title: disallow initializing variables to undefined
+pr_body: |
+  See: https://eslint.org/docs/rules/no-undef-init

@@ -1,0 +1,9 @@
+tool_id: "eslint:array-element-newline"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{array-element-newline: \"error\"}"'
+
+pr_title: enforce line breaks after each array element
+pr_body: |
+  See: https://eslint.org/docs/rules/array-element-newline

@@ -1,0 +1,9 @@
+tool_id: "eslint:linebreak-style"
+extensions: ["js"]
+tags: ["JavaScript"]
+
+command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{linebreak-style: \"error\"}"'
+
+pr_title: enforce consistent linebreak style
+pr_body: |
+  See: https://eslint.org/docs/rules/linebreak-style
