@@ -1,6 +1,7 @@
 tool_id: "eslint:no-else-return"
 extensions: ["js"]
 tags: ["JavaScript"]
+default_weight: 100
 
 command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{no-else-return: \"error\"}"'
 
