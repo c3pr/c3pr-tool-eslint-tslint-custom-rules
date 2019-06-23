@@ -1,0 +1,10 @@
+tool_id: "tslint:no-unnecessary-type-assertion"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 200 # let eslint rules run first
+
+command: 'echo "{\"jsRules\":{\"no-unnecessary-type-assertion\":true},\"rules\":{\"no-unnecessary-type-assertion\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+
+pr_title: Warns if a type assertion does not change the type of an expression
+pr_body: |
+  See: https://palantir.github.io/tslint/rules/no-unnecessary-type-assertion/

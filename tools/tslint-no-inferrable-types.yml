@@ -1,0 +1,10 @@
+tool_id: "tslint:no-inferrable-types"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 200 # let eslint rules run first
+
+command: 'echo "{\"jsRules\":{\"no-inferrable-types\":true},\"rules\":{\"no-inferrable-types\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+
+pr_title: Disallows explicit type declarations for variables or parameters initialized to a number, string, or boolean
+pr_body: |
+  See: https://palantir.github.io/tslint/rules/no-inferrable-types/

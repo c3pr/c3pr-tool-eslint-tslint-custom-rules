@@ -1,0 +1,10 @@
+tool_id: "tslint:no-internal-module"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 200 # let eslint rules run first
+
+command: 'echo "{\"jsRules\":{\"no-internal-module\":true},\"rules\":{\"no-internal-module\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+
+pr_title: Disallows internal module
+pr_body: |
+  See: https://palantir.github.io/tslint/rules/no-internal-module/

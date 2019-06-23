@@ -1,0 +1,10 @@
+tool_id: "tslint:static-this"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 200 # let eslint rules run first
+
+command: 'echo "{\"jsRules\":{\"static-this\":true},\"rules\":{\"static-this\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+
+pr_title: Ban the use of this in static methods
+pr_body: |
+  See: https://palantir.github.io/tslint/rules/static-this/

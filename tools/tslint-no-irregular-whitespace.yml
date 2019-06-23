@@ -1,0 +1,10 @@
+tool_id: "tslint:no-irregular-whitespace"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 200 # let eslint rules run first
+
+command: 'echo "{\"jsRules\":{\"no-irregular-whitespace\":true},\"rules\":{\"no-irregular-whitespace\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+
+pr_title: Disallow irregular whitespace within a file, including strings and comments
+pr_body: |
+  See: https://palantir.github.io/tslint/rules/no-irregular-whitespace/

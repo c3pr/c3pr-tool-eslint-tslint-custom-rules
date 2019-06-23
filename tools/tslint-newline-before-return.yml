@@ -1,0 +1,10 @@
+tool_id: "tslint:newline-before-return"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 200 # let eslint rules run first
+
+command: 'echo "{\"jsRules\":{\"newline-before-return\":true},\"rules\":{\"newline-before-return\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+
+pr_title: Blank line before return when not the only line in the block
+pr_body: |
+  See: https://palantir.github.io/tslint/rules/newline-before-return/

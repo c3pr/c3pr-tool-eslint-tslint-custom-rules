@@ -1,0 +1,10 @@
+tool_id: "tslint:comment-format"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 200 # let eslint rules run first
+
+command: 'echo "{\"jsRules\":{\"comment-format\":true},\"rules\":{\"comment-format\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+
+pr_title: Formatting rules for single-line comments
+pr_body: |
+  See: https://palantir.github.io/tslint/rules/comment-format/

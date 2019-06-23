@@ -1,0 +1,10 @@
+tool_id: "tslint:semicolon"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 200 # let eslint rules run first
+
+command: 'echo "{\"jsRules\":{\"semicolon\":true},\"rules\":{\"semicolon\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+
+pr_title: Consistent semicolon usage at the end of every statement
+pr_body: |
+  See: https://palantir.github.io/tslint/rules/semicolon/

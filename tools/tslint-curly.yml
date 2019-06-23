@@ -1,0 +1,10 @@
+tool_id: "tslint:curly"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 200 # let eslint rules run first
+
+command: 'echo "{\"jsRules\":{\"curly\":true},\"rules\":{\"curly\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+
+pr_title: Braces for if/for/do/while statements
+pr_body: |
+  See: https://palantir.github.io/tslint/rules/curly/

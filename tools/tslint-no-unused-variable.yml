@@ -1,0 +1,10 @@
+tool_id: "tslint:no-unused-variable"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 200 # let eslint rules run first
+
+command: 'echo "{\"jsRules\":{\"no-unused-variable\":true},\"rules\":{\"no-unused-variable\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+
+pr_title: Disallows unused imports, variables, functions and private class members
+pr_body: |
+  See: https://palantir.github.io/tslint/rules/no-unused-variable/

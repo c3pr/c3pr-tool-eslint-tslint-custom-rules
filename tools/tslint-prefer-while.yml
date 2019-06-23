@@ -1,0 +1,10 @@
+tool_id: "tslint:prefer-while"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 200 # let eslint rules run first
+
+command: 'echo "{\"jsRules\":{\"prefer-while\":true},\"rules\":{\"prefer-while\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+
+pr_title: Prefer while loops instead of for loops without an initializer and incrementor
+pr_body: |
+  See: https://palantir.github.io/tslint/rules/prefer-while/

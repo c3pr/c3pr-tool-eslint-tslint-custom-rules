@@ -1,0 +1,10 @@
+tool_id: "tslint:align"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 200 # let eslint rules run first
+
+command: 'echo "{\"jsRules\":{\"align\":true},\"rules\":{\"align\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+
+pr_title: Vertical alignment
+pr_body: |
+  See: https://palantir.github.io/tslint/rules/align/

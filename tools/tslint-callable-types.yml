@@ -1,0 +1,10 @@
+tool_id: "tslint:callable-types"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 200 # let eslint rules run first
+
+command: 'echo "{\"jsRules\":{\"callable-types\":true},\"rules\":{\"callable-types\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+
+pr_title: An interface or literal type with just a call signature can be written as a function type
+pr_body: |
+  See: https://palantir.github.io/tslint/rules/callable-types/

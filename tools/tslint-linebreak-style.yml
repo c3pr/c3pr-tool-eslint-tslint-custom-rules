@@ -1,0 +1,10 @@
+tool_id: "tslint:linebreak-style"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 200 # let eslint rules run first
+
+command: 'echo "{\"jsRules\":{\"linebreak-style\":true},\"rules\":{\"linebreak-style\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+
+pr_title: A consistent linebreak style
+pr_body: |
+  See: https://palantir.github.io/tslint/rules/linebreak-style/

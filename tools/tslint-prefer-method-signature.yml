@@ -1,0 +1,10 @@
+tool_id: "tslint:prefer-method-signature"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 200 # let eslint rules run first
+
+command: 'echo "{\"jsRules\":{\"prefer-method-signature\":true},\"rules\":{\"prefer-method-signature\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+
+pr_title: Prefer foo(): void over foo: () => void in interfaces and types
+pr_body: |
+  See: https://palantir.github.io/tslint/rules/prefer-method-signature/

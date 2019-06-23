@@ -1,0 +1,10 @@
+tool_id: "tslint:space-within-parens"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 200 # let eslint rules run first
+
+command: 'echo "{\"jsRules\":{\"space-within-parens\":true},\"rules\":{\"space-within-parens\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+
+pr_title: Spaces within parentheses or disallow them. Empty parentheses () are always allowed
+pr_body: |
+  See: https://palantir.github.io/tslint/rules/space-within-parens/

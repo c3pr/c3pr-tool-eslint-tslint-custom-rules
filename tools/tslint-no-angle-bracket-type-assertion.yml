@@ -1,0 +1,10 @@
+tool_id: "tslint:no-angle-bracket-type-assertion"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 200 # let eslint rules run first
+
+command: 'echo "{\"jsRules\":{\"no-angle-bracket-type-assertion\":true},\"rules\":{\"no-angle-bracket-type-assertion\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+
+pr_title: Requires the use of as Type for type assertions instead of <Type>
+pr_body: |
+  See: https://palantir.github.io/tslint/rules/no-angle-bracket-type-assertion/

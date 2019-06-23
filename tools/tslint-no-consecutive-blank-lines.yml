@@ -1,0 +1,10 @@
+tool_id: "tslint:no-consecutive-blank-lines"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 200 # let eslint rules run first
+
+command: 'echo "{\"jsRules\":{\"no-consecutive-blank-lines\":true},\"rules\":{\"no-consecutive-blank-lines\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+
+pr_title: Disallows one or more blank lines in a row
+pr_body: |
+  See: https://palantir.github.io/tslint/rules/no-consecutive-blank-lines/

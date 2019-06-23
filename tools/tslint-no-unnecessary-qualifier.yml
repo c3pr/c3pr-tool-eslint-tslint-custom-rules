@@ -1,0 +1,10 @@
+tool_id: "tslint:no-unnecessary-qualifier"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 200 # let eslint rules run first
+
+command: 'echo "{\"jsRules\":{\"no-unnecessary-qualifier\":true},\"rules\":{\"no-unnecessary-qualifier\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+
+pr_title: Warns when a namespace qualifier (A.x) is unnecessary
+pr_body: |
+  See: https://palantir.github.io/tslint/rules/no-unnecessary-qualifier/

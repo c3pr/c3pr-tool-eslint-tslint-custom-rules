@@ -1,0 +1,10 @@
+tool_id: "tslint:trailing-comma"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 200 # let eslint rules run first
+
+command: 'echo "{\"jsRules\":{\"trailing-comma\":true},\"rules\":{\"trailing-comma\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+
+pr_title: Requires or disallows trailing commas in array and object literals, destructuring assignments, function typings, named imports and exports and function parameters
+pr_body: |
+  See: https://palantir.github.io/tslint/rules/trailing-comma/

@@ -1,0 +1,10 @@
+tool_id: "tslint:arrow-return-shorthand"
+extensions: ["js", "ts"]
+tags: ["JavaScript", "TypeScript"]
+default_weight: 200 # let eslint rules run first
+
+command: 'echo "{\"jsRules\":{\"arrow-return-shorthand\":true},\"rules\":{\"arrow-return-shorthand\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+
+pr_title: Suggests to convert () => { return x; } to () => x
+pr_body: |
+  See: https://palantir.github.io/tslint/rules/arrow-return-shorthand/
