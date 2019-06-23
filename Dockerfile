@@ -15,7 +15,7 @@ RUN mkdir -p /c3pr/temp /c3pr/agent
 # This adds the tool binary to the PATH. Also does any configuration specific to the tool.
 #
 #
-RUN npm i -g typescript tslint eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+RUN npm i -g typescript@^3.5.2 tslint@^5.18.0 eslint@^5.16.0 @typescript-eslint/parser@^1.10.2 @typescript-eslint/eslint-plugin@^1.10.2
 RUN mkdir -p /c3pr/rules
 COPY rules /c3pr/rules
 
@@ -46,5 +46,6 @@ RUN chmod +x /c3pr/agent/c3pr-agent
 
 EXPOSE 5003
 
+#ENTRYPOINT sh
 ENTRYPOINT /c3pr/agent/c3pr-agent
 
