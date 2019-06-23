@@ -3,7 +3,7 @@ extensions: ["js"]
 tags: ["JavaScript"]
 default_weight: 99
 
-command: 'eslint --fix #{filename} --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rulesdir "/c3pr/rules" --rule "{simplify-binary-expression-custom: \"error\"}"'
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rulesdir "/c3pr/rules" --rule "{simplify-binary-expression-custom: \"error\"}"'
 
 
 pr_title: Simplify binary boolean expression
