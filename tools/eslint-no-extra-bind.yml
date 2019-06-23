@@ -5,6 +5,6 @@ default_weight: 100
 
 command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{no-extra-bind: \"error\"}"'
 
-pr_title: Unnecessary calls to .bind()
+pr_title: Remove unnecessary calls to .bind()
 pr_body: |
   See: https://eslint.org/docs/rules/no-extra-bind

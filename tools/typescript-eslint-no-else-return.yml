@@ -5,6 +5,6 @@ default_weight: 300 # prefer eslint and tslint over this
 
 command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/no-else-return: \"error\"}"'
 
-pr_title: else blocks after return statements in if statements
+pr_title: Remove else blocks after return statements in if statements
 pr_body: |
   See: https://eslint.org/docs/rules/no-else-return

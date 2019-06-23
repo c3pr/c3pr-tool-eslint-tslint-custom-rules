@@ -5,6 +5,6 @@ default_weight: 100
 
 command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{no-extra-semi: \"error\"}"'
 
-pr_title: Unnecessary semicolons
+pr_title: Remove unnecessary semicolons
 pr_body: |
   See: https://eslint.org/docs/rules/no-extra-semi
