@@ -9,7 +9,7 @@ multiple:
     extensions: ["js", "ts"]
     tags: ["JavaScript", "TypeScript"]
     default_weight: 300 # prefer eslint and tslint over this
-    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/padding-line-between-statements: \"error\"}"'
+    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{padding-line-between-statements: \"error\"}"'
 
 pr_title: require or disallow padding lines between statements
 pr_body: |

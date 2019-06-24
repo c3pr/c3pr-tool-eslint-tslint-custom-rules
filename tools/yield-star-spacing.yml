@@ -9,7 +9,7 @@ multiple:
     extensions: ["js", "ts"]
     tags: ["JavaScript ES6", "TypeScript"]
     default_weight: 310 # prefer eslint and tslint over this
-    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/yield-star-spacing: \"error\"}"'
+    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{yield-star-spacing: \"error\"}"'
 
 pr_title: require or disallow spacing around the * in yield* expressions
 pr_body: |

@@ -9,7 +9,7 @@ multiple:
     extensions: ["js", "ts"]
     tags: ["JavaScript ES6", "TypeScript"]
     default_weight: 310 # prefer eslint and tslint over this
-    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/sort-imports: \"error\"}"'
+    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{sort-imports: \"error\"}"'
 
 pr_title: Sorted import declarations within modules
 pr_body: |

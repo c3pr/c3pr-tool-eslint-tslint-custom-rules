@@ -9,7 +9,7 @@ multiple:
     extensions: ["js", "ts"]
     tags: ["JavaScript ES6", "TypeScript"]
     default_weight: 310 # prefer eslint and tslint over this
-    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/object-shorthand: \"error\"}"'
+    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{object-shorthand: \"error\"}"'
 
 pr_title: Or disallow method and property shorthand syntax for object literals
 pr_body: |

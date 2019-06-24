@@ -9,7 +9,7 @@ multiple:
     extensions: ["js", "ts"]
     tags: ["JavaScript", "TypeScript"]
     default_weight: 300 # prefer eslint and tslint over this
-    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/multiline-comment-style: [\"error\", \"starred-block\"]}"'
+    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{multiline-comment-style: [\"error\", \"starred-block\"]}"'
 
 pr_title: Style for multiline comments
 pr_body: |

@@ -101,6 +101,67 @@ let eslint = {
 
 const es6 = ["arrow-body-style", "arrow-parens", "arrow-spacing", "generator-star-spacing", "no-confusing-arrow", "no-useless-computed-key", "no-useless-rename", "no-var", "object-shorthand", "prefer-arrow-callback", "prefer-const", "prefer-destructuring", "prefer-numeric-literals", "prefer-template", "rest-spread-spacing", "sort-imports", "symbol-description", "template-curly-spacing", "yield-star-spacing"];
 
+const tsEslint = [
+"adjacent-overload-signatures",
+"array-type",
+"await-thenable",
+"ban-ts-ignore",
+"ban-types",
+"camelcase",
+"class-name-casing",
+"consistent-type-definitions",
+"explicit-function-return-type",
+"explicit-member-accessibility",
+"func-call-spacing",
+"generic-type-naming",
+"indent",
+"index",
+"interface-name-prefix",
+"member-delimiter-style",
+"member-naming",
+"member-ordering",
+"no-angle-bracket-type-assertion",
+"no-array-constructor",
+"no-empty-function",
+"no-empty-interface",
+"no-explicit-any",
+"no-extra-parens",
+"no-extraneous-class",
+"no-floating-promises",
+"no-for-in-array",
+"no-inferrable-types",
+"no-magic-numbers",
+"no-misused-new",
+"no-namespace",
+"no-non-null-assertion",
+"no-object-literal-type-assertion",
+"no-parameter-properties",
+"no-require-imports",
+"no-this-alias",
+"no-triple-slash-reference",
+"no-type-alias",
+"no-unnecessary-qualifier",
+"no-unnecessary-type-assertion",
+"no-unused-vars",
+"no-use-before-define",
+"no-useless-constructor",
+"no-var-requires",
+"prefer-for-of",
+"prefer-function-type",
+"prefer-includes",
+"prefer-interface",
+"prefer-namespace-keyword",
+"prefer-regexp-exec",
+"prefer-string-starts-ends-with",
+"promise-function-async",
+"require-array-sort-compare",
+"restrict-plus-operands",
+"semi",
+"type-annotation-spacing",
+"unbound-method",
+"unified-signatures"
+];
+
 const fs = require('fs');
 for ([rule, desc] of Object.entries(eslint)) {
     const template = `multiple:
@@ -114,7 +175,7 @@ for ([rule, desc] of Object.entries(eslint)) {
     extensions: ["js", "ts"]
     tags: ["JavaScript${es6.includes(rule) ? ' ES6' : ''}", "TypeScript"]
     default_weight: 3${es6.includes(rule) ? '1' : '0'}0 # prefer eslint and tslint over this
-    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/${rule}: ${desc.rules_args.replace(/"/g, '\\"')}}"'
+    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{${tsEslint.includes(rule) ? '@typescript-eslint/' : ''}${rule}: ${desc.rules_args.replace(/"/g, '\\"')}}"'
 
 pr_title: ${desc.title}
 pr_body: |
