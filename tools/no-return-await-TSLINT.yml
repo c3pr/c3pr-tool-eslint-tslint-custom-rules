@@ -1,7 +1,7 @@
 tool_id: "tslint:no-return-await"
 extensions: ["js", "ts"]
 tags: ["JavaScript ES6", "TypeScript"]
-default_weight: 210 # let eslint rules run first
+default_weight: 412 # let eslint rules run first
 
 command: 'echo "{\"jsRules\":{\"no-return-await\":true},\"rules\":{\"no-return-await\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
 

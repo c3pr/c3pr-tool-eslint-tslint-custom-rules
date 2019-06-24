@@ -2,13 +2,13 @@ multiple:
   - tool_id: "eslint:template-curly-spacing"
     extensions: ["js"]
     tags: ["JavaScript ES6"]
-    default_weight: 110
+    default_weight: 411
     command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{template-curly-spacing: \"error\"}"'
 
   - tool_id: "typescript-eslint:template-curly-spacing"
     extensions: ["js", "ts"]
     tags: ["JavaScript ES6", "TypeScript"]
-    default_weight: 310 # prefer eslint and tslint over this
+    default_weight: 413 # prefer eslint and tslint over this
     command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{template-curly-spacing: \"error\"}"'
 
 pr_title: require or disallow spacing around embedded expressions of template strings
