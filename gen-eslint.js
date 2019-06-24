@@ -167,13 +167,13 @@ for ([rule, desc] of Object.entries(eslint)) {
     const template = `multiple:
   - tool_id: "eslint:${rule}"
     extensions: ["js"]
-    tags: ["JavaScript${es6.includes(rule) ? ' ES6' : ''}"]
+    tags: ["JavaScript ${es6.includes(rule) ? 'ES6' : 'ES5'}"]
     default_weight: 1${es6.includes(rule) ? '1' : '0'}0
     command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{${rule}: ${desc.rules_args.replace(/"/g, '\\"')}}"'
 
   - tool_id: "typescript-eslint:${rule}"
     extensions: ["js", "ts"]
-    tags: ["JavaScript${es6.includes(rule) ? ' ES6' : ''}", "TypeScript"]
+    tags: ["JavaScript ${es6.includes(rule) ? 'ES6' : 'ES5'}", "TypeScript"]
     default_weight: 3${es6.includes(rule) ? '1' : '0'}0 # prefer eslint and tslint over this
     command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{${tsEslint.includes(rule) ? '@typescript-eslint/' : ''}${rule}: ${desc.rules_args.replace(/"/g, '\\"')}}"'
 

@@ -1,13 +1,13 @@
 multiple:
   - tool_id: "eslint:no-extra-label"
     extensions: ["js"]
-    tags: ["JavaScript"]
+    tags: ["JavaScript ES5"]
     default_weight: 100
     command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{no-extra-label: \"error\"}"'
 
   - tool_id: "typescript-eslint:no-extra-label"
     extensions: ["js", "ts"]
-    tags: ["JavaScript", "TypeScript"]
+    tags: ["JavaScript ES5", "TypeScript"]
     default_weight: 300 # prefer eslint and tslint over this
     command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{no-extra-label: \"error\"}"'
 
