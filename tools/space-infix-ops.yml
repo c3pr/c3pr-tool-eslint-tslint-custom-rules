@@ -1,4 +1,3 @@
-
 multiple:
   - tool_id: "eslint:space-infix-ops"
     extensions: ["js"]

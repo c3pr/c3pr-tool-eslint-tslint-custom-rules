@@ -1,4 +1,3 @@
-
 multiple:
   - tool_id: "eslint:no-useless-return"
     extensions: ["js"]

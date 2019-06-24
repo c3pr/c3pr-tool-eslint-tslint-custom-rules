@@ -103,8 +103,7 @@ const es6 = ["arrow-body-style", "arrow-parens", "arrow-spacing", "generator-sta
 
 const fs = require('fs');
 for ([rule, desc] of Object.entries(eslint)) {
-    const template = `
-multiple:
+    const template = `multiple:
   - tool_id: "eslint:${rule}"
     extensions: ["js"]
     tags: ["JavaScript${es6.includes(rule) ? ' ES6' : ''}"]

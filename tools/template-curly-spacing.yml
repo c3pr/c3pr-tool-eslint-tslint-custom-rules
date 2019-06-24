@@ -1,4 +1,3 @@
-
 multiple:
   - tool_id: "eslint:template-curly-spacing"
     extensions: ["js"]
