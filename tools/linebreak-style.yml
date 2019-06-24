@@ -1,17 +1,27 @@
-
+# Disabled because git changes the linebreak used, possibly leading to false positives too frequently
 multiple:
   - tool_id: "eslint:linebreak-style"
+    disabled: true
     extensions: ["js"]
     tags: ["JavaScript"]
     default_weight: 100
     command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{linebreak-style: \"error\"}"'
 
   - tool_id: "typescript-eslint:linebreak-style"
+    disabled: true
     extensions: ["js", "ts"]
     tags: ["JavaScript", "TypeScript"]
     default_weight: 300 # prefer eslint and tslint over this
     command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/linebreak-style: \"error\"}"'
 
-pr_title: Consistent linebreak style
+  - tool_id: "tslint:linebreak-style"
+    disabled: true
+    extensions: ["js", "ts"]
+    tags: ["JavaScript", "TypeScript"]
+    default_weight: 200 # let eslint rules run first
+
+    command: 'echo "{\"jsRules\":{\"linebreak-style\":true},\"rules\":{\"linebreak-style\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+
+pr_title: A consistent linebreak style
 pr_body: |
-  See: https://eslint.org/docs/rules/linebreak-style
+  More info: https://eslint.org/docs/rules/linebreak-style https://palantir.github.io/tslint/rules/linebreak-style/
