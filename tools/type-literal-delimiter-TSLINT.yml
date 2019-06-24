@@ -1,10 +1,12 @@
 tool_id: "tslint:type-literal-delimiter"
-extensions: ["js", "ts"]
-tags: ["JavaScript", "TypeScript"]
+extensions: ["ts"]
+tags: ["TypeScript"]
 default_weight: 200 # let eslint rules run first
 
 command: 'echo "{\"jsRules\":{\"type-literal-delimiter\":true},\"rules\":{\"type-literal-delimiter\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
 
-pr_title: Checks that type literal members are separated by semicolons. Enforces a trailing semicolon for multiline type literals
+pr_title: Type literal members should be separated by semicolons
 pr_body: |
+  Type literal members should be separated by semicolons. Use a trailing semicolon for multiline type literals.
+
   See: https://palantir.github.io/tslint/rules/type-literal-delimiter/
