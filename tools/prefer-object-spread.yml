@@ -1,3 +1,4 @@
+# TODO really understand eslint's. perhaps they are different from tslint's after all
 multiple:
   - tool_id: "eslint:prefer-object-spread"
     extensions: ["js"]
