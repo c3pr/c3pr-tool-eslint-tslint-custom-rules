@@ -1,17 +1,31 @@
-
 multiple:
   - tool_id: "eslint:prefer-object-spread"
     extensions: ["js"]
-    tags: ["JavaScript"]
+    tags: ["JavaScript", "ECMAScript 2015"]
     default_weight: 100
     command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{prefer-object-spread: \"error\"}"'
 
+    pr_title: Using Object.assign with an object literal as the first argument and prefer the use of object spread instead
+    pr_body: |
+      See: https://eslint.org/docs/rules/prefer-object-spread
+
   - tool_id: "typescript-eslint:prefer-object-spread"
     extensions: ["js", "ts"]
-    tags: ["JavaScript", "TypeScript"]
+    tags: ["JavaScript", "ECMAScript 2015", "TypeScript"]
     default_weight: 300 # prefer eslint and tslint over this
     command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/prefer-object-spread: \"error\"}"'
 
-pr_title: Using Object.assign with an object literal as the first argument and prefer the use of object spread instead
-pr_body: |
-  See: https://eslint.org/docs/rules/prefer-object-spread
+    pr_title: Using Object.assign with an object literal as the first argument and prefer the use of object spread instead
+    pr_body: |
+      See: https://eslint.org/docs/rules/prefer-object-spread
+
+  - tool_id: "tslint:prefer-object-spread"
+    extensions: ["js", "ts"]
+    tags: ["JavaScript", "ECMAScript 2015", "TypeScript"]
+    default_weight: 200 # let eslint rules run first
+
+    command: 'echo "{\"jsRules\":{\"prefer-object-spread\":true},\"rules\":{\"prefer-object-spread\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+
+    pr_title: Use the ES2018 object spread operator over Object.assign() where appropriate
+    pr_body: |
+      See: https://palantir.github.io/tslint/rules/prefer-object-spread/
