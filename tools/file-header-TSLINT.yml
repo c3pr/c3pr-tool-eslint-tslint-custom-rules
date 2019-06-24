@@ -1,6 +1,6 @@
 tool_id: "tslint:file-header"
 extensions: ["js", "ts"]
-tags: ["JavaScript", "TypeScript"]
+tags: ["JavaScript ES5", "TypeScript"]
 default_weight: 200 # let eslint rules run first
 
 command: 'echo "{\"jsRules\":{\"file-header\":true},\"rules\":{\"file-header\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'

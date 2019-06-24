@@ -1,10 +1,10 @@
 tool_id: "tslint:no-null-keyword"
 extensions: ["js", "ts"]
-tags: ["JavaScript", "TypeScript"]
+tags: ["JavaScript ES5", "TypeScript"]
 default_weight: 200 # let eslint rules run first
 
 command: 'echo "{\"jsRules\":{\"no-null-keyword\":true},\"rules\":{\"no-null-keyword\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
 
-pr_title: Disallows use of the null keyword literal
+pr_title: Avoid use of the null keyword literal
 pr_body: |
   See: https://palantir.github.io/tslint/rules/no-null-keyword/

@@ -1,10 +1,14 @@
 tool_id: "tslint:no-string-literal"
 extensions: ["js", "ts"]
-tags: ["JavaScript", "TypeScript"]
-default_weight: 200 # let eslint rules run first
+tags: ["JavaScript ES5", "TypeScript"]
+default_weight: 201 # let eslint rules run first
 
 command: 'echo "{\"jsRules\":{\"no-string-literal\":true},\"rules\":{\"no-string-literal\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
 
-pr_title: Forbids unnecessary string literal property access. Allows obj["prop-erty"] (can’t be a regular property access). Disallows obj["property"] (should be obj.property)
+pr_title: Avoid unnecessary string literal property access
 pr_body: |
+  `obj["property"]`, when possible, should be `obj.property`.
+
+  `obj["prop-erty"]` is allowed, for instance.
+
   See: https://palantir.github.io/tslint/rules/no-string-literal/

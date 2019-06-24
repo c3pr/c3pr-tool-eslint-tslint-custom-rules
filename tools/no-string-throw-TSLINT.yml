@@ -1,6 +1,6 @@
 tool_id: "tslint:no-string-throw"
 extensions: ["js", "ts"]
-tags: ["JavaScript", "TypeScript"]
+tags: ["JavaScript ES5", "TypeScript"]
 default_weight: 200 # let eslint rules run first
 
 command: 'echo "{\"jsRules\":{\"no-string-throw\":true},\"rules\":{\"no-string-throw\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'

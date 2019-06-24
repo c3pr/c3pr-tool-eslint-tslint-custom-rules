@@ -1,6 +1,6 @@
 tool_id: "tslint:object-literal-key-quotes"
 extensions: ["js", "ts"]
-tags: ["JavaScript", "TypeScript"]
+tags: ["JavaScript ES5", "TypeScript"]
 default_weight: 200 # let eslint rules run first
 
 command: 'echo "{\"jsRules\":{\"object-literal-key-quotes\":true},\"rules\":{\"object-literal-key-quotes\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'

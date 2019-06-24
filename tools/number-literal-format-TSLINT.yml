@@ -1,10 +1,10 @@
 tool_id: "tslint:number-literal-format"
 extensions: ["js", "ts"]
-tags: ["JavaScript", "TypeScript"]
+tags: ["JavaScript ES5", "TypeScript"]
 default_weight: 200 # let eslint rules run first
 
 command: 'echo "{\"jsRules\":{\"number-literal-format\":true},\"rules\":{\"number-literal-format\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
 
-pr_title: Checks that decimal literals should begin with ‘0.’ instead of just ‘.’, and should not end with a trailing ‘0’
+pr_title: Decimal literals should begin with ‘0.’ instead of just ‘.’, and should not end with a trailing ‘0’
 pr_body: |
   See: https://palantir.github.io/tslint/rules/number-literal-format/

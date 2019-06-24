@@ -1,19 +1,19 @@
 multiple:
   - tool_id: "eslint:space-before-function-paren"
     extensions: ["js"]
-    tags: ["JavaScript"]
+    tags: ["JavaScript ES5"]
     default_weight: 100
     command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{space-before-function-paren: [\"error\",{\"anonymous\":\"always\",\"named\":\"never\",\"asyncArrow\":\"always\"}]}"'
 
   - tool_id: "typescript-eslint:space-before-function-paren"
     extensions: ["js", "ts"]
-    tags: ["JavaScript", "TypeScript"]
+    tags: ["JavaScript ES5", "TypeScript"]
     default_weight: 300 # prefer eslint and tslint over this
     command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/space-before-function-paren: [\"error\",{\"anonymous\":\"always\",\"named\":\"never\",\"asyncArrow\":\"always\"}]}"'
 
   - tool_id: "tslint:space-before-function-paren"
     extensions: ["js", "ts"]
-    tags: ["JavaScript", "TypeScript"]
+    tags: ["JavaScript ES5", "TypeScript"]
     default_weight: 200 # let eslint rules run first
 
     command: 'echo "{\"jsRules\":{\"space-before-function-paren\":[true,{\"anonymous\":\"always\",\"named\":\"never\",\"asyncArrow\":\"always\"}]},\"rules\":{\"space-before-function-paren\":[true,{\"anonymous\":\"always\",\"named\":\"never\",\"asyncArrow\":\"always\"}]}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
