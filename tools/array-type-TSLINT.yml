@@ -1,6 +1,6 @@
 tool_id: "tslint:array-type"
 extensions: ["js", "ts"]
-tags: ["JavaScript", "TypeScript"]
+tags: ["TypeScript"]
 default_weight: 200 # let eslint rules run first
 
 command: 'echo "{\"jsRules\":{\"array-type\":[true,\"array\"]},\"rules\":{\"array-type\":[true,\"array\"]}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
