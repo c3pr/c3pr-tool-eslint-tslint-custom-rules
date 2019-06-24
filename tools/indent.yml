@@ -2,19 +2,19 @@ multiple:
   - tool_id: "eslint:indent"
     extensions: ["js"]
     tags: ["JavaScript"]
-    default_weight: 101
+    default_weight: 120
     command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{indent: \"error\"}"'
 
   - tool_id: "typescript-eslint:indent"
     extensions: ["js", "ts"]
     tags: ["JavaScript", "TypeScript"]
-    default_weight: 301 # prefer eslint and tslint over this
+    default_weight: 320 # prefer eslint and tslint over this
     command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/indent: \"error\"}"'
 
   - tool_id: "tslint:indent"
     extensions: ["js", "ts"]
     tags: ["JavaScript", "TypeScript"]
-    default_weight: 201 # let eslint rules run first
+    default_weight: 220 # let eslint rules run first
 
     command: 'echo "{\"jsRules\":{\"indent\":[true,\"spaces\",4]},\"rules\":{\"indent\":[true,\"spaces\",4]}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
 

@@ -2,19 +2,19 @@ multiple:
   - tool_id: "eslint:prefer-const"
     extensions: ["js"]
     tags: ["JavaScript ES6"]
-    default_weight: 100
+    default_weight: 110
     command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{prefer-const: \"error\"}"'
 
   - tool_id: "typescript-eslint:prefer-const"
     extensions: ["js", "ts"]
     tags: ["JavaScript ES6", "TypeScript"]
-    default_weight: 300 # prefer eslint and tslint over this
+    default_weight: 310 # prefer eslint and tslint over this
     command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/prefer-const: \"error\"}"'
 
   - tool_id: "tslint:prefer-const"
     extensions: ["js", "ts"]
     tags: ["JavaScript ES6", "TypeScript"]
-    default_weight: 200 # let eslint rules run first
+    default_weight: 210 # let eslint rules run first
 
     command: 'echo "{\"jsRules\":{\"prefer-const\":[true,{\"destructuring\":\"all\"}]},\"rules\":{\"prefer-const\":[true,{\"destructuring\":\"all\"}]}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
 

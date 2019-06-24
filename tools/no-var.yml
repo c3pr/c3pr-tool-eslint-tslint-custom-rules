@@ -2,13 +2,13 @@ multiple:
   - tool_id: "eslint:no-var"
     extensions: ["js"]
     tags: ["JavaScript ES6"]
-    default_weight: 100
+    default_weight: 110
     command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{no-var: \"error\"}"'
 
   - tool_id: "typescript-eslint:no-var"
     extensions: ["js", "ts"]
     tags: ["JavaScript ES6", "TypeScript"]
-    default_weight: 300 # prefer eslint and tslint over this
+    default_weight: 310 # prefer eslint and tslint over this
     command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/no-var: \"error\"}"'
 
 pr_title: Use let or const instead of var

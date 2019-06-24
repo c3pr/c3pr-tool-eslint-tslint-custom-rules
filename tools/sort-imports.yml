@@ -2,13 +2,13 @@ multiple:
   - tool_id: "eslint:sort-imports"
     extensions: ["js"]
     tags: ["JavaScript ES6"]
-    default_weight: 100
+    default_weight: 110
     command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{sort-imports: \"error\"}"'
 
   - tool_id: "typescript-eslint:sort-imports"
     extensions: ["js", "ts"]
     tags: ["JavaScript ES6", "TypeScript"]
-    default_weight: 300 # prefer eslint and tslint over this
+    default_weight: 310 # prefer eslint and tslint over this
     command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/sort-imports: \"error\"}"'
 
 pr_title: Sorted import declarations within modules
