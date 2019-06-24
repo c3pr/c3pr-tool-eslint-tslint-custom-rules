@@ -1,17 +1,41 @@
-
 multiple:
   - tool_id: "eslint:arrow-parens"
     extensions: ["js"]
     tags: ["JavaScript"]
     default_weight: 100
-    command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{arrow-parens: \"error\"}"'
+    command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{arrow-parens:[\"error\",\"always\"]}"'
 
   - tool_id: "typescript-eslint:arrow-parens"
     extensions: ["js", "ts"]
     tags: ["JavaScript", "TypeScript"]
     default_weight: 300 # prefer eslint and tslint over this
-    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/arrow-parens: \"error\"}"'
+    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/arrow-parens:[\"error\",\"always\"]}"'
 
-pr_title: Parentheses around arrow function arguments
+  - tool_id: "tslint:arrow-parens"
+    extensions: ["js", "ts"]
+    tags: ["JavaScript", "TypeScript"]
+    default_weight: 200 # let eslint rules run first
+
+    command: 'echo "{\"jsRules\":{\"arrow-parens\":true},\"rules\":{\"arrow-parens\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+
+pr_title: Add parentheses around arrow function arguments
 pr_body: |
-  See: https://eslint.org/docs/rules/arrow-parens
+  Although arrow functions can omit parentheses when they have exactly one parameter, for consistency,
+  we should wrap use parentheses around arrow function parameters regardless of arity. For example:
+
+  ```js
+  a => {}   // Bad
+
+  (a) => {} // Good
+  ```
+
+  Following this style will help you find arrow functions (`=>`) which may be mistakenly included in a condition
+  when a comparison such as `>=` was the intent.
+
+  ```js
+  if (a => 2) { } // Bad
+
+  if (a >= 2) { } // Good
+  ```
+
+  More info: https://eslint.org/docs/rules/arrow-parens https://palantir.github.io/tslint/rules/arrow-parens/
