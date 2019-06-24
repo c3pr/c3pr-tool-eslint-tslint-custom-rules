@@ -1,0 +1,9 @@
+tool_id: "typescript-eslint:ban-types"
+extensions: ["ts"]
+tags: ["TypeScript"]
+default_weight: 300 # prefer eslint and tslint over this
+command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/ban-types:[\"error\",{\"types\":{\"String\":{\"message\":\"Use string instead\",\"fixWith\":\"string\"}}}]}"'
+
+pr_title: Prefer string over String
+pr_body: |
+  More info: https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-types.md
