@@ -68,6 +68,8 @@ pr_body: |
         fs.appendFileSync(`${__dirname}/tools/${rule}.yml`, '\r\n - ' + template);
         fs.unlinkSync(`${__dirname}/tools/tslint-${rule}.yml`);
     } else {
-        fs.writeFileSync(`${__dirname}/tools/tslint-${rule}.yml`, template)
+        fs.unlinkSync(`${__dirname}/tools/tslint-${rule}.yml`);
+        fs.writeFileSync(`${__dirname}/tools/${rule}-TSLINT.yml`, template)
+        // fs.writeFileSync(`${__dirname}/tools/tslint-${rule}.yml`, template)
     }
 }
