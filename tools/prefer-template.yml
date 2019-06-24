@@ -1,0 +1,17 @@
+
+multiple:
+  - tool_id: "eslint:prefer-template"
+    extensions: ["js"]
+    tags: ["JavaScript"]
+    default_weight: 100
+    command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{prefer-template: \"error\"}"'
+
+  - tool_id: "typescript-eslint:prefer-template"
+    extensions: ["js", "ts"]
+    tags: ["JavaScript", "TypeScript"]
+    default_weight: 300 # prefer eslint and tslint over this
+    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/prefer-template: \"error\"}"'
+
+pr_title: Template literals instead of string concatenation
+pr_body: |
+  See: https://eslint.org/docs/rules/prefer-template

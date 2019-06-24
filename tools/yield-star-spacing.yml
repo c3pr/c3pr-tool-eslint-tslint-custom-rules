@@ -1,0 +1,17 @@
+
+multiple:
+  - tool_id: "eslint:yield-star-spacing"
+    extensions: ["js"]
+    tags: ["JavaScript"]
+    default_weight: 100
+    command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{yield-star-spacing: \"error\"}"'
+
+  - tool_id: "typescript-eslint:yield-star-spacing"
+    extensions: ["js", "ts"]
+    tags: ["JavaScript", "TypeScript"]
+    default_weight: 300 # prefer eslint and tslint over this
+    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/yield-star-spacing: \"error\"}"'
+
+pr_title: require or disallow spacing around the * in yield* expressions
+pr_body: |
+  See: https://eslint.org/docs/rules/yield-star-spacing

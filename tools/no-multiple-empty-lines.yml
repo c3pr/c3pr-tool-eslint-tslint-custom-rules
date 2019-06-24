@@ -1,0 +1,17 @@
+
+multiple:
+  - tool_id: "eslint:no-multiple-empty-lines"
+    extensions: ["js"]
+    tags: ["JavaScript"]
+    default_weight: 100
+    command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{no-multiple-empty-lines: \"error\"}"'
+
+  - tool_id: "typescript-eslint:no-multiple-empty-lines"
+    extensions: ["js", "ts"]
+    tags: ["JavaScript", "TypeScript"]
+    default_weight: 300 # prefer eslint and tslint over this
+    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/no-multiple-empty-lines: \"error\"}"'
+
+pr_title: Multiple empty lines
+pr_body: |
+  See: https://eslint.org/docs/rules/no-multiple-empty-lines

@@ -1,0 +1,17 @@
+
+multiple:
+  - tool_id: "eslint:no-lonely-if"
+    extensions: ["js"]
+    tags: ["JavaScript"]
+    default_weight: 100
+    command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{no-lonely-if: \"error\"}"'
+
+  - tool_id: "typescript-eslint:no-lonely-if"
+    extensions: ["js", "ts"]
+    tags: ["JavaScript", "TypeScript"]
+    default_weight: 300 # prefer eslint and tslint over this
+    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/no-lonely-if: \"error\"}"'
+
+pr_title: If statements as the only statement in else blocks
+pr_body: |
+  See: https://eslint.org/docs/rules/no-lonely-if

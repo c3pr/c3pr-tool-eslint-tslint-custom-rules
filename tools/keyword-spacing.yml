@@ -1,0 +1,17 @@
+
+multiple:
+  - tool_id: "eslint:keyword-spacing"
+    extensions: ["js"]
+    tags: ["JavaScript"]
+    default_weight: 100
+    command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{keyword-spacing: \"error\"}"'
+
+  - tool_id: "typescript-eslint:keyword-spacing"
+    extensions: ["js", "ts"]
+    tags: ["JavaScript", "TypeScript"]
+    default_weight: 300 # prefer eslint and tslint over this
+    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/keyword-spacing: \"error\"}"'
+
+pr_title: Consistent spacing before and after keywords
+pr_body: |
+  See: https://eslint.org/docs/rules/keyword-spacing

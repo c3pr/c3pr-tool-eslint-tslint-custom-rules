@@ -1,0 +1,17 @@
+
+multiple:
+  - tool_id: "eslint:newline-per-chained-call"
+    extensions: ["js"]
+    tags: ["JavaScript"]
+    default_weight: 100
+    command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{newline-per-chained-call: \"error\"}"'
+
+  - tool_id: "typescript-eslint:newline-per-chained-call"
+    extensions: ["js", "ts"]
+    tags: ["JavaScript", "TypeScript"]
+    default_weight: 300 # prefer eslint and tslint over this
+    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/newline-per-chained-call: \"error\"}"'
+
+pr_title: A newline after each call in a method chain
+pr_body: |
+  See: https://eslint.org/docs/rules/newline-per-chained-call

@@ -1,0 +1,17 @@
+
+multiple:
+  - tool_id: "eslint:prefer-numeric-literals"
+    extensions: ["js"]
+    tags: ["JavaScript"]
+    default_weight: 100
+    command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{prefer-numeric-literals: \"error\"}"'
+
+  - tool_id: "typescript-eslint:prefer-numeric-literals"
+    extensions: ["js", "ts"]
+    tags: ["JavaScript", "TypeScript"]
+    default_weight: 300 # prefer eslint and tslint over this
+    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/prefer-numeric-literals: \"error\"}"'
+
+pr_title: parseInt() and Number.parseInt() in favor of binary, octal, and hexadecimal literals
+pr_body: |
+  See: https://eslint.org/docs/rules/prefer-numeric-literals
