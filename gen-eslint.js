@@ -99,19 +99,21 @@ let eslint = {
 
 };
 
+const es6 = ["arrow-body-style", "arrow-parens", "arrow-spacing", "generator-star-spacing", "no-confusing-arrow", "no-useless-computed-key", "no-useless-rename", "no-var", "object-shorthand", "prefer-arrow-callback", "prefer-const", "prefer-destructuring", "prefer-numeric-literals", "prefer-template", "rest-spread-spacing", "sort-imports", "symbol-description", "template-curly-spacing", "yield-star-spacing"];
+
 const fs = require('fs');
 for ([rule, desc] of Object.entries(eslint)) {
     const template = `
 multiple:
   - tool_id: "eslint:${rule}"
     extensions: ["js"]
-    tags: ["JavaScript"]
+    tags: ["JavaScript${es6.includes(rule) ? ' ES6' : ''}"]
     default_weight: 100
     command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{${rule}: ${desc.rules_args.replace(/"/g, '\\"')}}"'
 
   - tool_id: "typescript-eslint:${rule}"
     extensions: ["js", "ts"]
-    tags: ["JavaScript", "TypeScript"]
+    tags: ["JavaScript${es6.includes(rule) ? ' ES6' : ''}", "TypeScript"]
     default_weight: 300 # prefer eslint and tslint over this
     command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/${rule}: ${desc.rules_args.replace(/"/g, '\\"')}}"'
 
@@ -119,7 +121,7 @@ pr_title: ${desc.title}
 pr_body: |
   ${desc.body  ? desc.body + '\n\n  ' : ''}See: https://eslint.org/docs/rules/${rule}
 `;
-    fs.unlinkSync(`${__dirname}/tools/eslint-${rule}.yml`);
-    fs.unlinkSync(`${__dirname}/tools/typescript-eslint-${rule}.yml`);
+    // fs.unlinkSync(`${__dirname}/tools/eslint-${rule}.yml`);
+    // fs.unlinkSync(`${__dirname}/tools/typescript-eslint-${rule}.yml`);
     fs.writeFileSync(`${__dirname}/tools/${rule}.yml`, template);
 }
