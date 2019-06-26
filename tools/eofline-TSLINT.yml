@@ -1,3 +1,4 @@
+disabled: true
 tool_id: "tslint:eofline"
 extensions: ["js", "ts"]
 tags: ["JavaScript ES5", "TypeScript"]
