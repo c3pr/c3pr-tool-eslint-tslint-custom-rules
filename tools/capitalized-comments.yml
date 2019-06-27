@@ -1,3 +1,4 @@
+disabled: true
 multiple:
   - tool_id: "eslint:capitalized-comments"
     extensions: ["js"]
