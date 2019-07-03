@@ -8,21 +8,32 @@ command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --pa
 
 pr_title: "Simplify if statement if can be simplified to a single return statement"
 pr_body: |
-  simplify if statement if can be simplified to a single return statement, for example:
+  Simplify if statement if can be simplified to a single return statement, for example:
+
+  ```js
   function foo(x) {
     if(x === false){
       return true
     }
   return false
   }
-  this can be simplified to:
-    function foo(x) {
-      return x === true
-    }
-  or just:
-    function foo(x) {
-      return x
-    }
+  ```js
+
+  This can be simplified to:
+
+  ```js
+  function foo(x) {
+    return x === true
+  }
+  ```
+
+  Or just:
+
+  ```js
+  function foo(x) {
+    return x
+  }
+  ```
 
 
 
