@@ -15,9 +15,9 @@ pr_body: |
     if(x === false){
       return true
     }
-  return false
+    return false
   }
-  ```js
+  ```
 
   This can be simplified to:
 
@@ -27,7 +27,7 @@ pr_body: |
   }
   ```
 
-  Or just:
+  Or even, if the code only intends to check if `x` is truthy:
 
   ```js
   function foo(x) {
