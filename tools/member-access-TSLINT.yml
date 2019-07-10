@@ -3,8 +3,11 @@ extensions: ["ts"]
 tags: ["TypeScript"]
 default_weight: 200 # let eslint rules run first
 
-command: 'echo "{\"jsRules\":{\"member-access\":true},\"rules\":{\"member-access\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+command: 'echo "{\"jsRules\":{\"member-access\":[true,\"no-public\"]},\"rules\":{\"member-access\":[true,\"no-public\"]}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
 
-pr_title: Requires explicit visibility declarations for class members
+# pr_title: Requires explicit visibility declarations for class members
+pr_title: No need to specify "public" visibility declarations for class members
 pr_body: |
-  See: https://palantir.github.io/tslint/rules/member-access/
+  No need for `public` accessibility to be specified, because this is the default.
+
+  More: https://palantir.github.io/tslint/rules/member-access/

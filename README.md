@@ -49,4 +49,71 @@ c3pr tool for eslint, tslint and eslint-typescript rules/transformations.
 |  [ ] | @typescript-eslint/prefer-namespace-keyword       | Require the use of the namespace keyword instead of the module keyword to declare custom TypeScript modules        |
 |  [ ] | @typescript-eslint/prefer-string-starts-ends-with | Enforce the use of String#startsWith and String#endsWithinstead of other equivalent methods of checking substrings |
 |  [ ] | @typescript-eslint/semi                           | Require or disallow semicolons instead of ASI                                                                      |
-|  [ ] | @typescript-eslint/type-annotation-spacing        | Require consistent spacing around type annotations                                                                 |
+|  [ ] | @typescript-eslint/type-annotation-spacing        | Require consistent spacing around type annotations       |
+
+
+
+
+
+packages/eslint-plugin/src/rules/no-array-constructor.ts
+    fixable: 'code',
+
+packages/eslint-plugin/src/rules/prefer-namespace-keyword.ts
+    fixable: 'code',
+
+packages/eslint-plugin/src/rules/prefer-interface.ts
+    fixable: 'code',
+
+packages/eslint-plugin/src/rules/semi.ts
+    fixable: 'code',
+
+packages/eslint-plugin/src/rules/consistent-type-definitions.ts
+    fixable: 'code',
+
+packages/eslint-plugin/src/rules/ban-types.ts
+    fixable: 'code',
+
+packages/eslint-plugin/src/rules/func-call-spacing.ts
+    fixable: 'whitespace',
+
+packages/eslint-plugin/src/rules/prefer-function-type.ts
+    fixable: 'code',
+
+packages/eslint-plugin/src/rules/type-annotation-spacing.ts
+    fixable: 'whitespace',
+
+packages/eslint-plugin/src/rules/member-delimiter-style.ts
+    fixable: 'code',
+
+packages/eslint-plugin/src/rules/prefer-includes.ts
+    fixable: 'code',
+
+packages/eslint-plugin/src/rules/array-type.ts
+    fixable: 'code',
+
+packages/eslint-plugin/src/rules/no-extra-parens.ts
+    fixable: 'code',
+
+packages/eslint-plugin/src/rules/no-inferrable-types.ts
+    fixable: 'code',
+
+packages/eslint-plugin/src/rules/no-unnecessary-qualifier.ts
+    fixable: 'code',
+
+packages/eslint-plugin/src/rules/no-unnecessary-type-assertion.ts
+    fixable: 'code',
+
+packages/eslint-plugin/src/rules/no-explicit-any.ts
+    fixable: 'code',
+
+packages/eslint-plugin/src/rules/prefer-readonly.ts
+    fixable: 'code',
+
+packages/eslint-plugin/src/rules/indent.ts
+    fixable: 'whitespace',
+
+packages/eslint-plugin/src/rules/prefer-string-starts-ends-with.ts
+    fixable: 'code',
+
+packages/eslint-plugin/src/rules/indent-new-do-not-use/index.ts
+    fixable: 'whitespace',

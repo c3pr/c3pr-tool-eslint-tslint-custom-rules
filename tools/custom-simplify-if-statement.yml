@@ -1,6 +1,6 @@
 tool_id: "eslint:custom-simplify-if-statement"
-extensions: ["js"]
-tags: ["JavaScript ES5"]
+extensions: ["js", "ts"]
+tags: ["JavaScript ES5", "TypeScript"]
 default_weight: 99
 
 command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rulesdir "/c3pr/rules" --rule "{simplify-if-statement-custom: \"error\"}"'
@@ -8,21 +8,32 @@ command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --pa
 
 pr_title: "Simplify if statement if can be simplified to a single return statement"
 pr_body: |
-  simplify if statement if can be simplified to a single return statement, for example:
+  Simplify if statement if can be simplified to a single return statement, for example:
+
+  ```js
   function foo(x) {
     if(x === false){
       return true
     }
-  return false
+    return false
   }
-  this can be simplified to:
-    function foo(x) {
-      return x === true
-    }
-  or just:
-    function foo(x) {
-      return x
-    }
+  ```
+
+  This can be simplified to:
+
+  ```js
+  function foo(x) {
+    return x === true
+  }
+  ```
+
+  Or even, if the code only intends to check if `x` is truthy:
+
+  ```js
+  function foo(x) {
+    return x
+  }
+  ```
 
 
 

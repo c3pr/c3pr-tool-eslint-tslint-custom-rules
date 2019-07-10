@@ -3,7 +3,7 @@ extensions: ["js", "ts"]
 tags: ["JavaScript ES5", "TypeScript"]
 default_weight: 200 # let eslint rules run first
 
-command: 'echo "{\"jsRules\":{\"object-literal-key-quotes\":true},\"rules\":{\"object-literal-key-quotes\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+command: 'echo "{\"jsRules\":{\"object-literal-key-quotes\":[true,\"as-needed\"]},\"rules\":{\"object-literal-key-quotes\":[true,\"as-needed\"]}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
 
 pr_title: Consistent object literal property quote style
 pr_body: |
