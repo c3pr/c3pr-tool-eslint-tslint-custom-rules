@@ -1,0 +1,17 @@
+tool_id: "eslint:return-local-variable-custom"
+extensions: ["js"]
+tags: ["JavaScript ES5"]
+default_weight: 99
+
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rulesdir "/c3pr/rules" --rule "{return-local-variable-custom: \"error\"}"'
+
+
+pr_title: "Local variables should not be declared and then immediately returned"
+pr_body: |
+  Declaring a variable only to immediately return or throw it is a bad practice.
+
+  Some developers argue that the practice improves code readability,
+  because it enables them to explicitly name what is being returned.
+  However, this variable is an internal implementation detail that is not exposed to the callers of the method.
+  The method name should be sufficient for callers to know exactly what will be returned.
+
