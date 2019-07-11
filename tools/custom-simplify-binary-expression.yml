@@ -1,7 +1,7 @@
 tool_id: "eslint:custom-simplify-binary-expression"
 extensions: ["js", "ts"]
 tags: ["JavaScript ES5", "TypeScript"]
-default_weight: 99
+default_weight: 98
 
 command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rulesdir "/c3pr/rules" --rule "{simplify-binary-expression-custom: \"error\"}"'
 
