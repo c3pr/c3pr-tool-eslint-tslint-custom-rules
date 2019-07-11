@@ -3,7 +3,7 @@ extensions: ["js", "ts"]
 tags: ["JavaScript ES5", "TypeScript"]
 default_weight: 99
 
-command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rulesdir "/c3pr/rules" --rule "{simplify-chained-if-custom: \"error\", indent: \"error\"}"'
+command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rulesdir "/c3pr/rules" --rule "{simplify-chained-if-custom: \"error\"}"'
 
 
 pr_title: "Simplifies chained ifs"

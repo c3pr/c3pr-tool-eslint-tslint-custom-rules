@@ -35,6 +35,7 @@ module.exports = {
             message: "simplify expression",
             fix: function(fixer) {
               let fix = [];
+              fix.push(fixer.remove(node.consequent.body[0]));
               fix.push(
                 fixer.replaceText(
                   node.test,
@@ -43,17 +44,18 @@ module.exports = {
                     context.getSource(node.consequent.body[0].test)
                 )
               );
+
+              const whitespaceBeforeIf = context
+                .getSource(node.consequent)
+                .match(/^{[^\n]*(\r?\n\s+)/)[1];
               fix.push(
                 fixer.insertTextAfterRange(
                   [node.consequent.start, node.consequent.body[0].start],
                   node.consequent.body[0].consequent.body
-                    .map(item => {
-                      return context.getSource(item);
-                    })
-                    .join("\n")
+                    .map(i => context.getSource(i))
+                    .join(whitespaceBeforeIf)
                 )
               );
-              fix.push(fixer.remove(node.consequent.body[0]));
               return fix;
             }
           });
