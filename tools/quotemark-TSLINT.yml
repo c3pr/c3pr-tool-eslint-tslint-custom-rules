@@ -3,8 +3,15 @@ extensions: ["js", "ts"]
 tags: ["JavaScript ES5", "TypeScript"]
 default_weight: 200 # let eslint rules run first
 
-command: 'echo "{\"jsRules\":{\"quotemark\":true},\"rules\":{\"quotemark\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+command: 'echo "{\"jsRules\":{\"quotemark\":[[true,\"single\",\"avoid-escape\",\"avoid-template\"]},\"rules\":{\"quotemark\":[[true,\"single\",\"avoid-escape\",\"avoid-template\"]}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
 
 pr_title: Quote character for string literals
 pr_body: |
+  It's preferred to:
+
+  - Use single quotes;
+  - Don't use template strings that don't contain string interpolations;
+  - Use double quotes if using single quotes would require escaping.
+    - Example: You can use `"Hello 'World'"` instead of `'Hello \'World\''`
+
   See: https://palantir.github.io/tslint/rules/quotemark/
