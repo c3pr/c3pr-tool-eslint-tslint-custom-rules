@@ -3,13 +3,13 @@ multiple:
     extensions: ["js"]
     tags: ["JavaScript ES5"]
     default_weight: 100
-    command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{quotes: \"error\"}"'
+    command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{quotes:[\"error\",\"single\",{\"avoidEscape\":true}]}"'
 
   - tool_id: "typescript-eslint:quotes"
-    extensions: ["js", "ts"]
-    tags: ["JavaScript ES5", "TypeScript"]
+    extensions: ["ts"]
+    tags: ["TypeScript"]
     default_weight: 300 # prefer eslint and tslint over this
-    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{quotes: \"error\"}"'
+    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{quotes:[\"error\",\"single\",{\"avoidEscape\":true}]}"'
 
 pr_title: The consistent use of either backticks, double, or single quotes
 pr_body: |
