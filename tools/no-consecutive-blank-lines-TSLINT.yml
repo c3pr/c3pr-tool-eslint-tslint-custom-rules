@@ -3,8 +3,8 @@ extensions: ["js", "ts"]
 tags: ["JavaScript ES5", "TypeScript"]
 default_weight: 200 # let eslint rules run first
 
-command: 'echo "{\"jsRules\":{\"no-consecutive-blank-lines\":true},\"rules\":{\"no-consecutive-blank-lines\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+command: 'echo "{\"jsRules\":{\"no-consecutive-blank-lines\":[true, 2]},\"rules\":{\"no-consecutive-blank-lines\":[true, 2]}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
 
-pr_title: Don't use one or more blank lines in a row
+pr_title: Don't use than 2 blank lines in a row
 pr_body: |
   See: https://palantir.github.io/tslint/rules/no-consecutive-blank-lines/
