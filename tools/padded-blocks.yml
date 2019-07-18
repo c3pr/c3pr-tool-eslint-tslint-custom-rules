@@ -3,14 +3,58 @@ multiple:
     extensions: ["js"]
     tags: ["JavaScript ES5"]
     default_weight: 100
-    command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{padded-blocks: \"error\"}"'
+    command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{padded-blocks:[\"error\",{\"blocks\":\"never\",\"classes\":\"always\"}]}"'
 
   - tool_id: "typescript-eslint:padded-blocks"
     extensions: ["js", "ts"]
     tags: ["JavaScript ES5", "TypeScript"]
     default_weight: 300 # prefer eslint and tslint over this
-    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{padded-blocks: \"error\"}"'
+    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{padded-blocks:[\"error\",{\"blocks\":\"never\",\"classes\":\"always\"}]}"'
 
-pr_title: require or disallow padding within blocks
+pr_title: Use consistent line padding within blocks
 pr_body: |
+  For blocks, padding is disallowed:
+
+  :thumbsdown::
+
+  ```java
+  if (a) {
+
+      b();
+  }
+  ```
+
+  :thumbsup::
+
+  ```java
+  if (a) {
+      b();
+  }
+  ```
+
+  ---
+
+  For classes padding is mandatory:
+
+  :thumbsdown:
+
+  ```java
+  class  A {
+      constructor() {
+      }
+
+  }
+  ```
+
+  :thumbsup:
+
+  ```java
+  class  A {
+
+      constructor() {
+      }
+
+  }
+  ```
+
   See: https://eslint.org/docs/rules/padded-blocks
