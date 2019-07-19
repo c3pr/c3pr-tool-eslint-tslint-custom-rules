@@ -5,6 +5,6 @@ default_weight: 412 # let eslint rules run first
 
 command: 'echo "{\"jsRules\":{\"ordered-imports\":true},\"rules\":{\"ordered-imports\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
 
-pr_title: Requires that import statements be alphabetized and grouped
+pr_title: Import statements should be alphabetized and grouped
 pr_body: |
   See: https://palantir.github.io/tslint/rules/ordered-imports/
