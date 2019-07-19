@@ -3,20 +3,20 @@ multiple:
     extensions: ["js"]
     tags: ["JavaScript ES5"]
     default_weight: 420
-    command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{indent: \"error\"}"'
+    command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{indent:[\"error\",2]}"'
 
   - tool_id: "typescript-eslint:indent"
     extensions: ["js", "ts"]
     tags: ["JavaScript ES5", "TypeScript"]
     default_weight: 420 # prefer eslint and tslint over this
-    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/indent: \"error\"}"'
+    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{@typescript-eslint/indent:[\"error\",2]}"'
 
   - tool_id: "tslint:indent"
     extensions: ["js", "ts"]
     tags: ["JavaScript ES5", "TypeScript"]
     default_weight: 420 # let eslint rules run first
 
-    command: 'echo "{\"jsRules\":{\"indent\":[true,\"spaces\",4]},\"rules\":{\"indent\":[true,\"spaces\",4]}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
+    command: 'echo "{\"jsRules\":{\"indent\":[true,\"spaces\",2]},\"rules\":{\"indent\":[true,\"spaces\",2]}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
 
 pr_title: Use a consistent indentation style
 pr_body: |
@@ -24,6 +24,6 @@ pr_body: |
 
   Using only one of tabs or spaces for indentation leads to more consistent editor behavior, cleaner diffs in version control, and easier programmatic manipulation.
 
-  Our recommended style style is **4 spaces**.
+  Our recommended style style is **2 spaces**.
 
   More info: https://eslint.org/docs/rules/indent https://palantir.github.io/tslint/rules/indent/
