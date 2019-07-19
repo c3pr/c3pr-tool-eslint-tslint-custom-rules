@@ -2,7 +2,7 @@ disabled: true
 tool_id: "tslint:newline-before-return"
 extensions: ["js", "ts"]
 tags: ["JavaScript ES5", "TypeScript"]
-default_weight: 200 # let eslint rules run first
+default_weight: 500 # let eslint rules run first
 
 command: 'echo "{\"jsRules\":{\"newline-before-return\":true},\"rules\":{\"newline-before-return\":true}}" > /c3pr/temp/tslint.json && tslint --fix -c /c3pr/temp/tslint.json "#{filename}"'
 
