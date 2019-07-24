@@ -15,7 +15,7 @@ pr_title: Use consistent line padding within blocks
 pr_body: |
   For blocks, padding is disallowed:
 
-  :thumbsdown::
+  :thumbsdown: :
 
   ```java
   if (a) {
@@ -24,7 +24,7 @@ pr_body: |
   }
   ```
 
-  :thumbsup::
+  :thumbsup: :
 
   ```java
   if (a) {
