@@ -3,14 +3,30 @@ multiple:
     extensions: ["js"]
     tags: ["JavaScript ES5"]
     default_weight: 100
-    command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{dot-location: \"error\"}"'
+    command: 'eslint --fix "#{filename}" --no-eslintrc --env "es6" --env "node" --parser-options "{ecmaVersion: 2018}" --rule "{dot-location: [\"error\", \"property\"]}"'
 
   - tool_id: "typescript-eslint:dot-location"
     extensions: ["js", "ts"]
     tags: ["JavaScript ES5", "TypeScript"]
     default_weight: 300 # prefer eslint and tslint over this
-    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{dot-location: \"error\"}"'
+    command: 'eslint --fix "#{filename}"  --parser "@typescript-eslint/parser" --plugin "@typescript-eslint" --rule "{dot-location: [\"error\", \"property\"]}"'
 
 pr_title: Consistent newlines before and after dots
 pr_body: |
+  The dot in a member expression should be on the same line as the property portion.
+
+  :thumbsdown: :
+
+  ```javascript
+  var foo = object.
+              property();
+  ```
+
+  :thumbsup: :
+
+  ```javascript
+  var foo = object
+               .property();
+  ```
+
   See: https://eslint.org/docs/rules/dot-location
