@@ -1,4 +1,6 @@
 tool_id: "tslint:no-trailing-whitespace"
+# Whitespaces changes like this are problematic for the patch generator. Dont know if we will ever want this. Meanwhile, it will be disabled.
+disabled: true
 extensions: ["js", "ts"]
 tags: ["JavaScript ES5", "TypeScript"]
 default_weight: 200 # let eslint rules run first
