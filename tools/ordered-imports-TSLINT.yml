@@ -1,4 +1,5 @@
 tool_id: "tslint:ordered-imports"
+disabled: true
 extensions: ["js", "ts"]
 tags: ["JavaScript ES6", "TypeScript"]
 default_weight: 412 # let eslint rules run first
