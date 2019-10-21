@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ISSUE Types</title>
+    <style>
+        body { font-family: monospace }
+    </style>
+</head>
+<body>
+
+
+<div id="app">
+    <table border=1>
+        <tr v-for="a of as">
+            <td><a :href=a.link target=_blank>link</a></td>
+            <td>{{ display(a).name }}</td>
+            <td>{{ display(a).type }}</td>
+
+            <td>{{ display(a).new_type }}</td>
+        </tr>
+    </table>
+    <div>
+
+    </div>
+</div>
+<script src="https://unpkg.com/vue" type="module"></script>
+<script type="module">
+    import { issue_types } from './issue_types.js';
+    new Vue({
+        el: '#app',
+        data: {
+            as: [
+                { link: 'newline-before-return', new_type: 'consistency_style' },
+                { link: 'no-consecutive-blank-lines', new_type: 'consistency_style' },
+                { link: 'object-literal-key-quotes', new_type: 'consistency_style' },
+                { link: 'object-literal-shorthand', new_type: 'consistency_style' },
+                { link: 'ordered-imports', new_type: 'consistency_style' },
+                { link: 'prefer-method-signature', new_type: 'consistency_style' },
+                { link: 'space-within-parens', new_type: 'consistency_style' },
+                { link: 'type-literal-delimiter', new_type: 'consistency_style' },
+                { link: 'typedef-whitespace', new_type: 'consistency_style' },
+            ]
+        },
+        methods: {
+            display(a) {
+                let name = a.link.split('/').slice(-1)[0];
+                let cat = issue_types.filter(c => c.tool_id === name);
+                if (cat.length > 1) {
+                    console.log('mais de um pra ',name,':', cat.map(x=>x.tool_category));
+                }
+                if (cat.length === 0) console.log('not found pra ', name)
+                cat = cat[0];
+                return {name, type: cat.tool_category, new_type: a.new_type};
+            }
+        },
+        computed: {
+            unworked() {
+                return this.as.filter(a => a.new_type === '')
+            }
+        }
+    })
+
+</script>
+</body>
+</html>
